@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: black;
+  font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", "MS Gothic";;
+}
+header .navbar-one{
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+header img{
+  filter: invert(1);
+}
+header .navbar-one .left{
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 5px;
+}
+header .navbar-one .left img{
+  height: 22px;
+}
+header .navbar-one .left h3{
+  font-weight: 500;
+  font-size: 15px;
+}
+header .navbar-one .right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .navbar-one .search-icon-container{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-icon{
+  height: 17px;
+}
+.open-app-btn{
+  border: none;
+  background-color: white;
+  height: 25px;
+  padding: 0 10px;
+  border-radius: 20px;
+  font-weight: 750;
+  font-size: 12px;
+}
+.ham-container{
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hamburger{
+  height: 20px;
+  background-color: transparent;
+}
+
+header .navbar-two{
+  margin-top: 100px;
+  background-color: red;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+}
+header .navbar-two img{
+ height: 32px;
+}

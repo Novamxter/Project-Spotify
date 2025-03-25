@@ -3,11 +3,11 @@
   padding: 0;
 }
 body{
-  background-color: black;
+  background-color: rgb(15,15,15);
   font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", "MS Gothic";;
 }
 header .navbar-one{
-  padding: 5px 10px;
+  padding: 5px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,8 @@ header .navbar-one{
   top: 0;
   left: 0;
   right: 0;
-  height: 30px;
+  height: 43px;
+  background-color: black;
 }
 header img{
   filter: invert(1);
@@ -27,7 +28,7 @@ header .navbar-one .left{
   gap: 5px;
 }
 header .navbar-one .left img{
-  height: 22px;
+  height: 25px;
 }
 header .navbar-one .left h3{
   font-weight: 500;
@@ -36,7 +37,7 @@ header .navbar-one .left h3{
 header .navbar-one .right{
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 13px;
 }
 header .navbar-one .search-icon-container{
   background-color: transparent;
@@ -45,17 +46,17 @@ header .navbar-one .search-icon-container{
   justify-content: center;
   align-items: center;
 }
-.search-icon{
+header .navbar-one .search-icon{
   height: 17px;
 }
 .open-app-btn{
   border: none;
   background-color: white;
-  height: 25px;
-  padding: 0 10px;
+  height: 33px;
+  padding: 0 20px;
   border-radius: 20px;
-  font-weight: 750;
-  font-size: 12px;
+  font-weight: 700;
+  font-size: 14px;
 }
 .ham-container{
   background-color: transparent;
@@ -66,18 +67,51 @@ header .navbar-one .search-icon-container{
   align-items: center;
 }
 .hamburger{
-  height: 20px;
+  height: 23px;
   background-color: transparent;
 }
 
 header .navbar-two{
   margin-top: 100px;
-  background-color: red;
+  /* background-color: red; */
   height: 40px;
   display: flex;
   align-items: center;
   padding: 0 35px;
 }
-header .navbar-two img{
+header .navbar-two .logo-2{
  height: 32px;
+}
+header .navbar-two .left-icon-container{
+  background-color: transparent;
+  border:none;
+  background-color: rgba(183,183,183,0.231);
+  border-radius:50%;
+  height:52px;
+  width:52px;
+}
+header .navbar-two .left-icon{
+  height:25px;
+  width:25px;
+}
+
+/*-------------search-card-----------*/
+.search-card-container{
+  display:flex;
+  flex-wrap: wrap;
+}
+.search-card{
+  background-color: rgb(220,20,140);
+  color:white;
+  position:relative;
+  overflow: hidden;
+  height:100px;
+  width:160px;
+  border-radius:5px;
+}
+.search-card img{
+  position: absolute ;
+  height:80px;
+  right:-25px;
+  transform: rotate(25deg);
 }

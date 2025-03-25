@@ -3,12 +3,14 @@
   padding: 0;
 }
 body{
-  background-color: rgb(15,15,15);
-  font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", "MS Gothic";;
+  background-color: rgb(18, 18, 18);
+  font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", "MS Gothic";
+  color:white;
 }
 header .navbar-one{
   padding: 5px 15px;
-  display: flex;
+  /* display: flex; */
+  display: none;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -70,48 +72,141 @@ header .navbar-one .search-icon{
   height: 23px;
   background-color: transparent;
 }
-
+/*-----------------second-navbar--------*/
 header .navbar-two{
-  margin-top: 100px;
-  /* background-color: red; */
-  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
   display: flex;
   align-items: center;
   padding: 0 35px;
+  justify-content: space-between;
+  background-color: black;
+  padding-right: 170px;
+}
+header .navbar-two section{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 header .navbar-two .logo-2{
- height: 32px;
+ height: 35px;
+}
+header .navbar-two .left-icons{
+  display: flex;
+  gap: 8px;
 }
 header .navbar-two .left-icon-container{
   background-color: transparent;
   border:none;
-  background-color: rgba(183,183,183,0.231);
+  background-color: rgb(38, 38, 38);
   border-radius:50%;
-  height:52px;
-  width:52px;
+  height:48px;
+  width:48px;
+  gap: 10px;
+  transition: background-color 0.8s ease;
+}
+header .navbar-two .left-icon-container:hover{
+  background-color: rgb(50, 50, 50);
 }
 header .navbar-two .left-icon{
-  height:25px;
-  width:25px;
+  height:22px;
+  width:22px;
 }
-
+header .navbar-two .left-links ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #b3b3b3;
+  font-weight: 700;
+  padding: 5px 20px 5px 5px;
+  border-right: 1px solid white;
+  transition: all 0.8s ease-in-out;
+  height: 100%;
+}
+header .navbar-two .left-links li{
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  padding: 10px 0;
+}
+header .navbar-two .left-links li:nth-child(2){
+  width: 67px;
+  justify-content: flex-start;
+}
+header .navbar-two .left-links li:hover{
+  color: white;
+  font-size:17px ;
+  cursor: pointer;
+}
+header .navbar-two .app-download-btn{
+  display: flex;
+  background-color: transparent;
+  border: none;
+  color: #adadad;
+  padding: 10px 13px;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .navbar-two .app-download-btn img{
+  height: 20px;
+  filter: invert(0);
+}
+header .navbar-two .right-btn-container{
+  display: flex;
+  gap: 15px;
+}
+header .navbar-two .sign-up-btn{
+  background-color: transparent;
+  border: none;
+  color: rgb(245, 245, 245);
+  padding: 10px 7px;
+  font-weight: 700;
+}
+header .navbar-two .log-in-btn{
+  background-color: white;
+  border: none;
+  height: 48px;
+  padding: 0 30px;
+  font-size: 0.9em;
+  font-weight: 700;
+  border-radius: 40px;
+}
 /*-------------search-card-----------*/
+.search-page{
+  display: none;
+}
 .search-card-container{
   display:flex;
   flex-wrap: wrap;
 }
 .search-card{
   background-color: rgb(220,20,140);
-  color:white;
+  
   position:relative;
   overflow: hidden;
-  height:100px;
-  width:160px;
+  height:95px;
+  width:170px;
   border-radius:5px;
 }
 .search-card img{
   position: absolute ;
-  height:80px;
-  right:-25px;
-  transform: rotate(25deg);
+  height:70px;
+  right:-17px;
+  bottom: 0;
+  transform: rotate(30deg);
+}
+.search-card p{
+  font-weight: 500;
+  margin-top: 10px;
+  margin-left: 10px;
 }

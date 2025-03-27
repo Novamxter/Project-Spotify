@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Styles/main.css">
     <title>Spotify - Web Player: Music for everyone</title>
     <link
       rel="icon"
@@ -21,59 +20,106 @@
       rel="icon"
       href="https://open.spotifycdn.com/cdn/images/favicon.0f31d2ea.ico"
     />
+    <link rel="stylesheet" href="./Styles/main.css" />
+    <link rel="stylesheet" href="Styles/mediaQueries.css" />
+    <link rel="stylesheet" href="Styles/Render-HW.css" />
   </head>
   <body>
     <header>
       <nav class="navbar-one">
         <div class="left">
-          <img src="./assets/Svg/mobilelogo.svg" alt="">
+          <img src="./assets/Svg/mobilelogo.svg" alt="" />
         </div>
         <div class="right">
           <button class="search-icon-container">
-            <img src="./assets/Svg/search.svg" alt="search-icon" class="search-icon">
+            <img
+              src="./assets/Svg/search.svg"
+              alt="search-icon"
+              class="search-icon"
+            />
           </button>
           <button class="open-app-btn">Open App</button>
           <button class="ham-container">
-            <img src="./assets/Svg/hamIcon.svg" alt="Ham Menu" class="hamburger">
+            <img
+              src="./assets/Svg/hamIcon.svg"
+              alt="Ham Menu"
+              class="hamburger"
+            />
           </button>
         </div>
       </nav>
       <nav class="navbar-two">
-        <img src="./assets/Svg/logo.svg" alt="" class="logo-2">
-        <section>
+        <img src="./assets/Svg/logo.svg" alt="" class="logo-2" />
+        <section class="nav-second-sec">
           <div class="left-icons">
             <button class="left-icon-container">
-              <img src="./assets/Svg/home.svg" alt="" class="left-icon">
+              <img src="./assets/Svg/home.svg" alt="" class="left-icon" />
             </button>
-            <button class="left-icon-container">
-              <img src="./assets/Svg/search.svg" alt="" class="left-icon">
-            </button>
+            <div class="search-bar-container">
+              <button class="left-icon-container">
+                <img src="./assets/Svg/search.svg" alt="" class="left-icon" />
+              </button>
+              <div class="search-bar">
+                <input type="text" />
+                <div class="search-line"></div>
+                <button class="search-wrapper-btn">
+                  <img src="./assets/Svg/wrapper.svg" alt="" />
+                </button>
+              </div>
+            </div>
           </div>
           <div class="left-links">
             <ul>
-              <span><li>Premium</li></span>
+              <li>Premium</li>
+              <li>Support</li>
+              <li>Download</li>
+            </ul>
+            <div class="nav-line"></div>
+          </div>
+        </section>
+        <section class="nav-third-sec">
+          <button class="app-download-btn">
+            <img src="./assets/Svg/download.svg" alt="" />
+            <span>Install App</span>
+          </button>
+        </section>
+
+        <div class="right-btn-container">
+          <button class="sign-up-btn">Sign up</button>
+          <button class="log-in-btn">Log in</button>
+        </div>
+        <div class="ham-container-two">
+          <button class="second-ham-btn">
+            <img src="./assets/Svg/hamIcon.svg" alt="" />
+          </button>
+          <div class="second-ham-items">
+            <ul>
+              <li>Premium</li>
               <li>Support</li>
               <li>Download</li>
             </ul>
           </div>
-        </section>
-       
-        <button class="app-download-btn">
-          <img src="./assets/Svg/download.svg" alt="">
-          <span>Install App</span>
-        </button>
-        <div class="right-btn-container">
-          <button class="sign-up-btn">
-            Sign up
-          </button>
-          <button class="log-in-btn">Log in</button>
         </div>
-        
       </nav>
     </header>
     <section class="search-page">
+      <div class="search-page-bar">
+        <h2>Search</h2>
+        <div class="sp-input-cont">
+          <input type="text" placeholder="What do you want to listen to?" />
+          <img src="./assets/Svg/search.svg" alt="" />
+        </div>
+      </div>
       <h3>Browse all</h3>
       <div class="search-card-container"></div>
     </section>
+
+    <div class="hw">
+      <span> Screen width: <span id="screen-width"></span>px </span>
+      <span>Screen height: <span id="screen-height"></span>px</span>
+    </div>
+    <button class="render-hw-button"></button>
+    <script type="module" src="./Scripts/main.js"></script>
+    <script src="./Scripts/Render-HW.js"></script>
   </body>
 </html>

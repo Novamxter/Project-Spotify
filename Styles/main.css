@@ -1,13 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: rgb(18, 18, 18);
-  font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", "MS Gothic";
-  color:white;
+  font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN",
+    "MS Gothic";
+  color: white;
 }
-header .navbar-one{
+header .navbar-one {
   padding: 5px 15px;
   /* display: flex; */
   display: none;
@@ -20,38 +21,38 @@ header .navbar-one{
   height: 43px;
   background-color: black;
 }
-header img{
+header img {
   filter: invert(1);
 }
-header .navbar-one .left{
+header .navbar-one .left {
   display: flex;
   align-items: center;
   color: white;
   gap: 5px;
 }
-header .navbar-one .left img{
+header .navbar-one .left img {
   height: 25px;
 }
-header .navbar-one .left h3{
+header .navbar-one .left h3 {
   font-weight: 500;
   font-size: 15px;
 }
-header .navbar-one .right{
+header .navbar-one .right {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 0.8125em;
 }
-header .navbar-one .search-icon-container{
+header .navbar-one .search-icon-container {
   background-color: transparent;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .navbar-one .search-icon{
+header .navbar-one .search-icon {
   height: 17px;
 }
-.open-app-btn{
+.open-app-btn {
   border: none;
   background-color: white;
   height: 33px;
@@ -60,7 +61,7 @@ header .navbar-one .search-icon{
   font-weight: 700;
   font-size: 14px;
 }
-.ham-container{
+.ham-container {
   background-color: transparent;
   border: none;
   padding: 5px;
@@ -68,145 +69,290 @@ header .navbar-one .search-icon{
   justify-content: center;
   align-items: center;
 }
-.hamburger{
+.hamburger {
   height: 23px;
   background-color: transparent;
 }
-/*-----------------second-navbar--------*/
-header .navbar-two{
+/*----------second-navbar-----------*/
+header .navbar-two {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 65px;
+  height: 4.0625rem; /*65px*/
   display: flex;
   align-items: center;
-  padding: 0 35px;
+  padding: 0 10.9375rem 0 20px; /*170px*/
   justify-content: space-between;
   background-color: black;
-  padding-right: 170px;
+  gap: clamp(0.9375em, 1.875em, 3.4375em);
+  /*(15px, 30px, 55px)*/
+  z-index: 100;
 }
-header .navbar-two section{
+header .navbar-two .nav-second-sec {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125em; /*5px*/
+  width: 100%;
+  max-width: 800px;
 }
-header .navbar-two .logo-2{
- height: 35px;
+header .navbar-two .logo-2 {
+  height: 2.1875rem; /*35px*/
 }
-header .navbar-two .left-icons{
+header .navbar-two .left-icons {
   display: flex;
-  gap: 8px;
+  gap: 0.5em; /*8px*/
+  width: 100%;
 }
-header .navbar-two .left-icon-container{
-  background-color: transparent;
-  border:none;
+header .navbar-two .left-icon-container {
+  border: none;
   background-color: rgb(38, 38, 38);
-  border-radius:50%;
-  height:48px;
-  width:48px;
-  gap: 10px;
+  border-radius: 50%;
+  height: 3rem; /*48px*/
+  min-height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  gap: 0.625em; /*0.625em*/
   transition: background-color 0.8s ease;
 }
-header .navbar-two .left-icon-container:hover{
+header .navbar-two .left-icon-container:hover {
   background-color: rgb(50, 50, 50);
 }
-header .navbar-two .left-icon{
-  height:22px;
-  width:22px;
+header .navbar-two .left-icon {
+  height: 1.375em; /*22px*/
+  width: 1.375em;
 }
-header .navbar-two .left-links ul{
+header .navbar-two .search-bar-container {
+  display: flex;
+  background-color: rgb(38, 38, 38);
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  height: 3rem; /*48px*/
+  border-radius: 1.5rem; /*24px*/
+}
+header .navbar-two .search-bar {
+  display: none;
+}
+header .navbar-two .search-bar input {
+  width: 100%;
+  height: 25px;
+  max-width: 600px;
+  min-width: 0.625em;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+}
+header .navbar-two .search-bar input:focus {
+  outline: none;
+}
+header .navbar-two .search-bar .search-line {
+  height: 1.6875rem; /*27px*/
+  width: 2px;
+  background-color: white;
+}
+header .navbar-two .search-wrapper-btn{
+  background-color: transparent;
+  border:none;
+}
+header .navbar-two .search-bar img {
+  padding-left: 1.25em; /*20px*/
+  height: 1.4375em; /*23px*/
+}
+header .navbar-two .left-links {
+  display: none;
+  position: relative;
+  /* padding-right:1.875em; 30px */
+}
+header .navbar-two .left-links ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625em; /*0.625em*/
   color: #b3b3b3;
   font-weight: 700;
-  padding: 5px 20px 5px 5px;
-  border-right: 1px solid white;
+  padding: 0.3125em; /*5px*/
   transition: all 0.8s ease-in-out;
   height: 100%;
 }
-header .navbar-two .left-links li{
-  width: 70px;
+header .navbar-two .left-links li {
+  width: 4.375rem; /*70px*/
   display: flex;
   justify-content: center;
   align-items: flex-end;
   transition: all 0.3s ease-in-out;
   height: 100%;
-  padding: 10px 0;
+  padding: 0.625em 0; /*0.625em*/
 }
-header .navbar-two .left-links li:nth-child(2){
-  width: 67px;
+header .navbar-two .left-links li:nth-child(2) {
+  width: 3.75rem; /*60px*/
   justify-content: flex-start;
 }
-header .navbar-two .left-links li:hover{
+header .navbar-two .left-links li:hover {
   color: white;
-  font-size:17px ;
+  font-size: 1.0625rem; /*17px*/
   cursor: pointer;
 }
-header .navbar-two .app-download-btn{
-  display: flex;
+header .navbar-two .left-links .nav-line {
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 1px;
+}
+header .navbar-two .app-download-btn {
   background-color: transparent;
   border: none;
   color: #adadad;
-  padding: 10px 13px;
+  padding: 0.625em 0.8125em; /* 10 - 13*/
   font-weight: 700;
-  font-size: 13px;
+  font-size: 0.8125rem; /*13px*/
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125em; /*5px*/
+  width: 120px;
+  /* width:7.8125rem; */ /*125px*/
 }
-header .navbar-two .app-download-btn img{
-  height: 20px;
+header .navbar-two .app-download-btn img {
+  height: 1.25rem; /*20*/
   filter: invert(0);
 }
-header .navbar-two .right-btn-container{
+header .navbar-two .right-btn-container {
   display: flex;
-  gap: 15px;
+  gap: 0.9375em; /*15*/
 }
-header .navbar-two .sign-up-btn{
+header .navbar-two .sign-up-btn {
   background-color: transparent;
   border: none;
   color: rgb(245, 245, 245);
-  padding: 10px 7px;
+  padding: 0.625em 0; /*10*/
   font-weight: 700;
+  width: 5rem; /*80*/
 }
-header .navbar-two .log-in-btn{
+header .navbar-two .log-in-btn {
   background-color: white;
   border: none;
-  height: 48px;
-  padding: 0 30px;
+  height: 3rem; /*48*/
+  width: 6.25rem; /*100*/
   font-size: 0.9em;
   font-weight: 700;
-  border-radius: 40px;
+  border-radius: 2.5rem; /*40*/
+}
+/*-----------second-ham-------------*/
+header .ham-container-two {
+  position: relative;
+  display: block;
+}
+header .ham-container-two img {
+  height: 1.5625rem; /*25*/
+}
+header .ham-container-two .second-ham-btn {
+  background-color: transparent;
+  border: none;
+  height: 1.875rem; /*30*/
+  width: 1.875rem;
+}
+header .ham-container-two .second-ham-items {
+  position: fixed;
+  right: 10.9375rem;
+  top: 4.0625rem;
+  z-index: -5;
+  background-color: rgb(50, 50, 50);
+  padding: 0 1.25em; /*20*/
+  width: 9.375rem; /*150*/
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  height: 0;
+  border-radius: 0.4375rem; /*7*/
+}
+header .second-ham-items.second-ham-active {
+  padding: 1.25em; /*20*/
+  height: 5.625rem; /*90*/
+}
+header .ham-container-two .second-ham-items ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.9375em; /*15*/
 }
 /*-------------search-card-----------*/
-.search-page{
+.search-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(18, 18, 18);
+  z-index: 100;
+  padding-bottom: 20px;
   display: none;
 }
-.search-card-container{
-  display:flex;
-  flex-wrap: wrap;
+.search-page.page-active{
+  display: block;
 }
-.search-card{
-  background-color: rgb(220,20,140);
-  
-  position:relative;
+.search-page-bar {
+  width: 90%;
+  margin: 50px auto 0 auto;
+}
+.sp-input-cont {
+  background-color: white;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.sp-input-cont img {
+  height: 23px;
+  position: absolute;
+  filter: invert(0);
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+.sp-input-cont input {
+  height: 100%;
+  width: 70%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-left: 47px;
+  font-size: 17px;
+}
+.sp-input-cont input::placeholder {
+  color:rgb(32,32,32);
+}
+.search-page h3{
+  width:90%;
+  margin: 20px auto 35px auto;
+}
+.search-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  gap:17px;
+}
+.search-card {
+  position: relative;
   overflow: hidden;
-  height:95px;
-  width:170px;
-  border-radius:5px;
+  height: 95px;
+  width: 150px;
+  border-radius: 5px;
 }
-.search-card img{
-  position: absolute ;
-  height:70px;
-  right:-17px;
+.search-card img {
+  position: absolute;
+  height: 70px;
+  right: -20px;
   bottom: 0;
   transform: rotate(30deg);
 }
-.search-card p{
+.search-card p {
+  width:80px;
   font-weight: 500;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 12px;
+  margin-left: 0.625em;
 }

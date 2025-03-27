@@ -1,0 +1,29 @@
+.hw{
+  height:30px;
+  position: fixed; 
+  bottom: 75px;
+  right: 75px;
+  width: auto; 
+  background: #000;
+  color: #fff;
+  justify-content:center;
+  font-size:1rem;
+  display:none;
+  flex-direction: column;
+  gap:5px;
+  font-size: 20px;
+  padding:25px;
+  border-radius:10px;
+  z-index:10;
+}
+.render-hw-button{
+  height:45px;
+  width:45px;
+  border-radius:50%;
+  border:1px solid white;
+  background-color: gray;
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  z-index: 100000;
+}

@@ -1,0 +1,20 @@
+@media screen and (min-width: 858px) {
+  header .navbar-two .left-links {
+    display:flex;
+    padding-right: 1.875em; /*30px*/
+  }
+  header .ham-container-two{
+    display:none;
+  }
+}
+@media screen and (min-width: 1054px) {
+  header .navbar-two .search-bar-container {
+    width: 100%;
+    padding-right: 25px;
+  }
+  header .navbar-two .search-bar {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+}

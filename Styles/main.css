@@ -10,8 +10,8 @@ body {
 }
 header .navbar-one {
   padding: 5px 15px;
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -79,8 +79,10 @@ header .navbar-two {
   top: 0;
   left: 0;
   right: 0;
-  height: 4.0625rem; /*65px*/
-  display: flex;
+  height: 8vw; /*65px - 4.0625rem*/
+  max-height: 65px;
+  min-height: 43px;
+  display: none;
   align-items: center;
   padding: 0 10.9375rem 0 20px; /*170px*/
   justify-content: space-between;
@@ -95,23 +97,24 @@ header .navbar-two .nav-second-sec {
   gap: 0.3125em; /*5px*/
   width: 100%;
   max-width: 800px;
+  margin-right: 40px;
+  /* min-width: 180px; */
 }
 header .navbar-two .logo-2 {
-  height: 2.1875rem; /*35px*/
+  height: 30px; /*35px 2.1875rem*/
 }
 header .navbar-two .left-icons {
   display: flex;
   gap: 0.5em; /*8px*/
-  width: 100%;
+  /* width: 100%; */
 }
 header .navbar-two .left-icon-container {
   border: none;
   background-color: rgb(38, 38, 38);
   border-radius: 50%;
-  height: 3rem; /*48px*/
-  min-height: 3rem;
-  width: 3rem;
-  min-width: 3rem;
+  height: 35px; /*48px*/
+  width: 35px;
+  min-width: 35px;
   gap: 0.625em; /*0.625em*/
   transition: background-color 0.8s ease;
 }
@@ -121,6 +124,7 @@ header .navbar-two .left-icon-container:hover {
 header .navbar-two .left-icon {
   height: 1.375em; /*22px*/
   width: 1.375em;
+  min-width: 1.375px;
 }
 header .navbar-two .search-bar-container {
   display: flex;
@@ -128,7 +132,7 @@ header .navbar-two .search-bar-container {
   display: flex;
   flex-grow: 1;
   align-items: center;
-  height: 3rem; /*48px*/
+  height: 35px; /*48px*/
   border-radius: 1.5rem; /*24px*/
 }
 header .navbar-two .search-bar {
@@ -235,8 +239,8 @@ header .navbar-two .sign-up-btn {
 header .navbar-two .log-in-btn {
   background-color: white;
   border: none;
-  height: 3rem; /*48*/
-  width: 6.25rem; /*100*/
+  height: 38px; /*48*/
+  width: 80px; /*100*/
   font-size: 0.9em;
   font-weight: 700;
   border-radius: 2.5rem; /*40*/

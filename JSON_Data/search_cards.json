@@ -1,6 +1,6 @@
 [{
   "title":"Music",
-  "imgSrc":"../assets/Images/search_cate/sp-01.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-01.jpeg",
   "bgColor":"rgb(220,20,140)"
 },{
   "title":"Podcasts",

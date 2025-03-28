@@ -1,10 +1,11 @@
 export async function addCards() {
   try {
-    let response = await fetch("../JSON_Data/search_cards.json");
+    let response = await fetch("JSON_Data/search_cards.json");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     let data = await response.json();
+    console.log(data)
     data.forEach((card) => {
       createCard(card);
     });

@@ -28,35 +28,41 @@ header .navbar-one .left {
   display: flex;
   align-items: center;
   color: white;
-  gap: 5px;
+  gap: 15px;
+  width: 100%;
+  max-width: 320px;
 }
 header .navbar-one .left img {
   height: 25px;
 }
-header .navbar-one .left h3 {
-  font-weight: 500;
-  font-size: 15px;
+header .navbar-one .search-icon-container {
+  border: none;
+  display: flex;
+  align-items: center;
+  background-color:transparent;
+  height: 38px;
+  width: 100%;
+  border-radius: 35px;
+}
+header .navbar-one .search-icon {
+  height: 17px;
+  margin-left: 10px;
 }
 header .navbar-one .right {
   display: flex;
   align-items: center;
   gap: 0.8125em;
 }
-header .navbar-one .search-icon-container {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .navbar-one .search-icon {
-  height: 17px;
-}
 .sign-up-one{
+  display: none;
   background-color: transparent;
   border: none;
+  border-radius: 40px;
   color:white;
   font-weight: 700;
+  /* margin: 0 10px; */
+  padding: 10px;
+  min-width: 90px;
 }
 .open-app-btn {
   border: none;
@@ -66,6 +72,7 @@ header .navbar-one .search-icon {
   border-radius: 20px;
   font-weight: 700;
   font-size: 14px;
+  min-width: 85px;
 }
 .ham-container {
   background-color: transparent;
@@ -90,7 +97,7 @@ header .navbar-two {
   min-height: 43px;
   display: none;
   align-items: center;
-  padding: 0 10.9375rem 0 20px; /*170px*/
+  padding: 0 140px 0 30px; /*170px*/
   justify-content: space-between;
   background-color: black;
   gap: clamp(0.9375em, 1.875em, 3.4375em);
@@ -102,7 +109,7 @@ header .navbar-two .nav-second-sec {
   align-items: center;
   gap: 0.3125em; /*5px*/
   width: 100%;
-  max-width: 800px;
+  max-width:1000px;
   margin-right: 40px;
   /* min-width: 180px; */
 }
@@ -128,14 +135,17 @@ header .navbar-two .left-icon-container:hover {
   background-color: rgb(50, 50, 50);
 }
 header .navbar-two .left-icon {
-  height: 1.375em; /*22px*/
-  width: 1.375em;
-  min-width: 1.375px;
+  height: 21px; /*22px*/
+  width: 21px;
+}
+.nav-third-sec{
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 header .navbar-two .search-bar-container {
   display: flex;
   background-color: rgb(38, 38, 38);
-  display: flex;
   flex-grow: 1;
   align-items: center;
   height: 35px; /*48px*/
@@ -147,7 +157,7 @@ header .navbar-two .search-bar {
 header .navbar-two .search-bar input {
   width: 100%;
   height: 25px;
-  max-width: 600px;
+  max-width: 800px;
   min-width: 0.625em;
   border: none;
   background-color: transparent;
@@ -159,20 +169,22 @@ header .navbar-two .search-bar input:focus {
 }
 header .navbar-two .search-bar .search-line {
   height: 1.6875rem; /*27px*/
-  width: 2px;
-  background-color: white;
+  width: 0.006em;
+  background-color: rgb(179, 179, 179);
 }
 header .navbar-two .search-wrapper-btn{
   background-color: transparent;
   border:none;
 }
 header .navbar-two .search-bar img {
-  padding-left: 1.25em; /*20px*/
-  height: 1.4375em; /*23px*/
+  padding-left: 15px; /*20px*/
+  height: 24px; /*23px*/
+  filter: invert(0);
 }
 header .navbar-two .left-links {
   display: none;
   position: relative;
+  margin-left: -20px;
   /* padding-right:1.875em; 30px */
 }
 header .navbar-two .left-links ul {
@@ -191,6 +203,7 @@ header .navbar-two .left-links li {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-size: 15px;
   transition: all 0.3s ease-in-out;
   height: 100%;
   padding: 0.625em 0; /*0.625em*/
@@ -214,16 +227,17 @@ header .navbar-two .left-links .nav-line {
   width: 1px;
 }
 header .navbar-two .app-download-btn {
-  background-color: transparent;
   border: none;
   color: #adadad;
+  background-color: transparent;
   padding: 0.625em 0.8125em; /* 10 - 13*/
   font-weight: 700;
-  font-size: 0.8125rem; /*13px*/
+  font-size: 12px;
   display: flex;
   align-items: center;
   gap: 0.3125em; /*5px*/
-  width: 120px;
+  width: 105px;
+  margin-right: -25px;
   /* width:7.8125rem; */ /*125px*/
 }
 header .navbar-two .app-download-btn img {
@@ -365,4 +379,14 @@ header .ham-container-two .second-ham-items ul {
   font-weight: 500;
   margin-top: 12px;
   margin-left: 0.625em;
+}
+/*----------------main-left-section----------------*/
+main{
+  margin-top: 100px;
+}
+.main-left-section{
+  width: 32vw;
+  height: 100vh;
+  background-color: red;
+  /* background-color: rgb(18, 18, 18) */
 }

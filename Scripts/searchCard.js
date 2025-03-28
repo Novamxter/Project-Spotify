@@ -1,12 +1,15 @@
 export async function addCards() {
   try {
     let response = await fetch("../JSON_Data/search_cards.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     let data = await response.json();
     data.forEach((card) => {
       createCard(card);
     });
   } catch (e) {
-    console.log("JSON data not fetched ..", e);
+    console.log("JSON data not fetched ..",e);
   }
 }
 function createCard(card) {
@@ -14,6 +17,6 @@ function createCard(card) {
   div.className = "search-card";
   div.style.backgroundColor = card.bgColor;
   div.innerHTML = `<p class="sc-title">${card.title}</p>
-    <img src="${card.imgSrc}" alt="" class="sc-img">`;
+    <img src="${card.imgSrc}" alt="" class="sc-img" loading="lazy">`;
   document.querySelector(".search-card-container").appendChild(div);
 }

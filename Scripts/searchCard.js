@@ -5,7 +5,6 @@ export async function addCards() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     let data = await response.json();
-    console.log(data)
     data.forEach((card) => {
       createCard(card);
     });

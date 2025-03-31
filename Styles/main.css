@@ -86,6 +86,58 @@ header .navbar-one .right {
   height: 23px;
   background-color: transparent;
 }
+.navbar-one .mobile-ham-items{
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  padding: 70px 45px;
+  list-style: none;
+  transition: all 0.6s ease-in-out;
+}
+.navbar-one .mobile-ham-items.mobile-ham-active{
+  right: 0;
+}
+.navbar-one .ham-top-links{
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  margin-bottom: 35px;
+}
+.navbar-one .ham-top-links a{
+  text-decoration: none;
+  color:white;
+  font-size: 18px;
+  font-weight: 650;
+}
+.navbar-one .ham-bottom-links{
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+  margin-top:30px;
+}
+.navbar-one .ham-bottom-links a{
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 650;
+}
+.navbar-one .mobile-ham-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  width: 40px;
+}
+.navbar-one .mobile-ham-close img{
+  height: 20px;
+  filter: invert(0);
+}
 /*----------second-navbar-----------*/
 header .navbar-two {
   position: fixed;
@@ -320,6 +372,19 @@ header .ham-container-two .second-ham-items ul {
   width: 90%;
   margin: 50px auto 0 auto;
 }
+.search-page-bar div{
+  display: flex;
+  justify-content: space-between;
+}
+.search-page-bar .search-back-btn{
+  background-color: transparent;
+  border: none;
+  padding: 0 20px;
+}
+.search-page-bar .search-back-btn img{
+  filter: invert(1);
+  height: 30px;
+}
 .sp-input-cont {
   background-color: white;
   position: relative;
@@ -380,13 +445,122 @@ header .ham-container-two .second-ham-items ul {
   margin-top: 12px;
   margin-left: 0.625em;
 }
-/*----------------main-left-section----------------*/
+/*--------main-left-section---------*/
 main{
-  margin-top: 100px;
+  margin-top: 53px;
+  display: flex;
+  flex-direction: column;
 }
-.main-left-section{
+/* .main-left-section{
   width: 32vw;
   height: 100vh;
   background-color: red;
-  /* background-color: rgb(18, 18, 18) */
+  background-color: rgb(18, 18, 18)
+} */
+/*--------main-right-section---------*/
+.main-right-section .song-section{
+  margin-top: 30px;
+}
+.main-right-section .song-section h3{
+  margin-bottom:13px;
+  padding-left: 17px;
+}
+.main-right-section .song-section .song-items{
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 17px;
+}
+.main-right-section .song-section .song-card{
+  padding: 8px;
+  border-radius: 5px;
+}
+.main-right-section .song-section .song-card:hover{
+  background-color:rgb(35,35,35);
+}
+.main-right-section .song-section .song-img img{
+  height:150px;
+  width: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+/*------------footer-------------*/
+footer{
+  padding: 17px;
+  margin-top:25px;
+}
+footer .footer-links-one{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 35px;
+}
+footer .footer-links-one div{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+footer .footer-links-one div p{
+  font-weight: 600;
+  font-size: 15px;
+}
+footer .footer-links-one div a{
+  text-decoration: none;
+  color: rgb(183,183,183);
+  font-size: 14px;
+}
+
+footer .footer-list{
+  display: flex;
+  gap: 13px;
+  margin: 38px 0;
+}
+footer .footer-list li{
+  height: 33px;
+  width: 33px;
+  background-color: rgb(37,37,37);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+footer img{
+  height:14px;
+  filter: invert(1);
+}
+footer .footer-line{
+  height: 1px;
+  width: 100%;
+  background-color:rgba(73,73,73,0.601);
+}
+footer .footer-links-two{
+  padding: 35px 0;
+}
+footer .footer-links-two div{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 17px;
+  row-gap: 13px;
+}
+footer .footer-links-two div a{
+  text-decoration: none;
+  color: rgb(183,183,183);
+  font-size: 13px;
+}
+footer .footer-links-two .lang-btn{
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(76,76,76,0.878);
+  border-radius: 15px;
+  color: rgb(219,219,219);
+  font-weight: 600;
+  padding: 0 12px;
+  margin-top:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+footer .footer-links-two .lang-btn img{
+  height: 15px;
 }

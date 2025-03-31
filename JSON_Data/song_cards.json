@@ -1,0 +1,310 @@
+[{
+  "title" : "Trending songs",
+  "items" : [{
+    "subTitle" : "2 Khatole",
+    "imgSrc" : "assets/Images/trending_songs/trend-01.jpeg"
+  },{
+    "subTitle" : "Premalo(From \"Court\")",
+    "imgSrc" : "assets/Images/trending_songs/trend-02.jpeg"
+  },{
+    "subTitle" : "Raanjhan (From \"Do patti\")",
+    "imgSrc" : "assets/Images/trending_songs/trend-03.jpeg"
+  },{
+    "subTitle" : "Finding Her",
+    "imgSrc" : "assets/Images/trending_songs/trend-04.jpeg"
+  },{
+    "subTitle" : "Paro",
+    "imgSrc" : "assets/Images/trending_songs/trend-05.jpeg"
+  },{
+    "subTitle" : "Jhol",
+    "imgSrc" : "assets/Images/trending_songs/trend-06.jpeg"
+  },{
+    "subTitle" : "Vartmaan",
+    "imgSrc" : "assets/Images/trending_songs/trend-07.jpeg"
+  },{
+    "subTitle" : "MONA LISA",
+    "imgSrc" : "assets/Images/trending_songs/trend-08.jpeg"
+  },{
+    "subTitle" : "Run It Up",
+    "imgSrc" : "assets/Images/trending_songs/trend-09.jpeg"
+  },{
+    "subTitle" : "Never Really Mattered",
+    "imgSrc" : "assets/Images/trending_songs/trend-10.jpeg"
+  },{
+    "subTitle" : "Og Sambavam (From \"Good Bad...",
+    "imgSrc" : "assets/Images/trending_songs/trend-11.jpeg"
+  },{
+    "subTitle" : "Dekha Ji Dekha Maine",
+    "imgSrc" : "assets/Images/trending_songs/trend-12.jpeg"
+  },{
+    "subTitle" : "Younger And Hotter Than Me",
+    "imgSrc" : "assets/Images/trending_songs/trend-13.jpeg"
+  },{
+    "subTitle" : "Dil Behkaaye",
+    "imgSrc" : "assets/Images/trending_songs/trend-14.jpeg"
+  },{
+    "subTitle" : "Maand",
+    "imgSrc" : "assets/Images/trending_songs/trend-15.jpeg"
+  },{
+    "subTitle" : "Apna Bana Le",
+    "imgSrc" : "assets/Images/trending_songs/trend-16.jpeg"
+  },{
+    "subTitle" : "Ranjheya Ve",
+    "imgSrc" : "assets/Images/trending_songs/trend-17.jpeg"
+  },{
+    "subTitle" : "Just Us (feat.Doja Cat)",
+    "imgSrc" : "assets/Images/trending_songs/trend-18.jpeg"
+  },{
+    "subTitle" : "Aashiq Tera",
+    "imgSrc" : "assets/Images/trending_songs/trend-19.jpeg"
+  },{
+    "subTitle" : "Mere Mittar",
+    "imgSrc" : "assets/Images/trending_songs/trend-20.jpeg"
+  }]
+},{
+  "title" : "Popular artists",
+  "items" : [{
+    "subTitle" : "Pritam",
+    "imgSrc" : "assets/Images/popular_artists/pritam-01.jpeg"
+  },{
+    "subTitle" : "A.R.Rahman",
+    "imgSrc" : "assets/Images/popular_artists/A_R_rahman-02.jpeg"
+  },{
+    "subTitle" : "Arijit Singh",
+    "imgSrc" : "assets/Images/popular_artists/Arijit-singh-03.jpeg"
+  },{
+    "subTitle" : "Sachin-Jigar",
+    "imgSrc" : "assets/Images/popular_artists/Sachin-jigar-04.jpeg"
+  },{
+    "subTitle" : "Vishal Shekhar",
+    "imgSrc" : "assets/Images/popular_artists/Vishal-shekhar-05.jpeg"
+  },{
+    "subTitle" : "Atif Aslam",
+    "imgSrc" : "assets/Images/popular_artists/Atif_aslam-06.jpeg"
+  },{
+    "subTitle" : "Anirudh Ravichander",
+    "imgSrc" : "assets/Images/popular_artists/Anirudh-07.jpeg"
+  },{
+    "subTitle" : "Yo Yo Honey Singh",
+    "imgSrc" : "assets/Images/popular_artists/Honey-singh-08.jpeg"
+  },{
+    "subTitle" : "Udit Narayan",
+    "imgSrc" : "assets/Images/popular_artists/Udit-narayan-09.jpeg"
+  },{
+    "subTitle" : "Amit Trivedi",
+    "imgSrc" : "assets/Images/popular_artists/Amit-10.jpeg"
+  },{
+    "subTitle" : "Shankar-Ehsaan-Loy",
+    "imgSrc" : "assets/Images/popular_artists/Shankar-Ehsaan-Loy-11.jpeg"
+  },{
+    "subTitle" : "Vishal Mishra",
+    "imgSrc" : "assets/Images/popular_artists/Vishal-mishra-12.jpeg"
+  },{
+    "subTitle" : "Diljit Dosanjh",
+    "imgSrc" : "assets/Images/popular_artists/Diljit-dosanjh-13.jpeg"
+  },{
+    "subTitle" : "Himesh Reshammiya",
+    "imgSrc" : "assets/Images/popular_artists/Himesh-reshammiya-14.jpeg"
+  },{
+    "subTitle" : "Tanishk Bagchi",
+    "imgSrc" : "assets/Images/popular_artists/Tanishk-bagchi-15.jpeg"
+  },{
+    "subTitle" : "Shreya Ghoshal",
+    "imgSrc" : "assets/Images/popular_artists/Shreya-ghoshal-16.jpeg"
+  },{
+    "subTitle" : "Jasleen Royal",
+    "imgSrc" : "assets/Images/popular_artists/Jasleen-royal-17.jpeg"
+  },{
+    "subTitle" : "Shankar Mahadevan",
+    "imgSrc" : "assets/Images/popular_artists/Shankar-mahadevan-18.jpeg"
+  },{
+    "subTitle" : "Badshah",
+    "imgSrc" : "assets/Images/popular_artists/Badshah-19.jpeg"
+  },{
+    "subTitle" : "Anuv Jain",
+    "imgSrc" : "assets/Images/popular_artists/Anuv-jain-20.jpeg"
+  }]
+},{
+  "title" : "Popular albums and singles",
+  "items" : [{
+    "subTitle" : "Sanam Teri Kasam (Original Motion...",
+    "imgSrc" : "assets/Images/albums/as-01.jpeg"
+  },{
+    "subTitle" : "Yeh Jawaani Hai Deewani",
+    "imgSrc" : "assets/Images/albums/as-02.jpeg"
+  },{
+    "subTitle" : "Aashiqui 2",
+    "imgSrc" : "assets/Images/albums/as-03.jpeg"
+  },{
+    "subTitle" : "Young G.O.A.T.",
+    "imgSrc" : "assets/Images/albums/as-04.jpeg"
+  },{
+    "subTitle" : "Glory",
+    "imgSrc" : "assets/Images/albums/as-05.jpeg"
+  },{
+    "subTitle" : "Sicario",
+    "imgSrc" : "assets/Images/albums/as-06.jpeg"
+  },{
+    "subTitle" : "Mismatched: Season 3 (Soundtrack from...",
+    "imgSrc" : "assets/Images/albums/as-07.jpeg"
+  },{
+    "subTitle" : "Ultimate Love Songs -Arijit Singh",
+    "imgSrc" : "assets/Images/albums/as-08.jpeg"
+  },{
+    "subTitle" : "Making Memories",
+    "imgSrc" : "assets/Images/albums/as-09.jpeg"
+  },{
+    "subTitle" : "Hurry Up Tomorrow",
+    "imgSrc" : "assets/Images/albums/as-10.jpeg"
+  },{
+    "subTitle" : "Raanjhan (From \"Do Patti\")",
+    "imgSrc" : "assets/Images/albums/as-11.jpeg"
+  },{
+    "subTitle" : "Jab We Met",
+    "imgSrc" : "assets/Images/albums/as-12.jpeg"
+  },{
+    "subTitle" : "Moosetape",
+    "imgSrc" : "assets/Images/albums/as-13.jpeg"
+  },{
+    "subTitle" : "Kabir Singh",
+    "imgSrc" : "assets/Images/albums/as-14.jpeg"
+  },{
+    "subTitle" : "Jo Tum Mere Ho",
+    "imgSrc" : "assets/Images/albums/as-15.jpeg"
+  },{
+    "subTitle" : "Patandar",
+    "imgSrc" : "assets/Images/albums/as-16.jpeg"
+  },{
+    "subTitle" : "Sahiba",
+    "imgSrc" : "assets/Images/albums/as-17.jpeg"
+  },{
+    "subTitle" : "MUSIC",
+    "imgSrc" : "assets/Images/albums/as-18.jpeg"
+  },{
+    "subTitle" : "Hamari Adhuri Kahani (Original...",
+    "imgSrc" : "assets/Images/albums/as-19.jpeg"
+  }]
+},{
+  "title" : "Popular radio",
+  "items" : [{
+    "subTitle" : "Arijit Singh Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-01.jpeg"
+  },{
+    "subTitle" : "Diljit Dosanjh Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-02.jpeg"
+  },{
+    "subTitle" : "Kishore Kumar Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-03.jpeg"
+  },{
+    "subTitle" : "Shreya Ghoshal Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-04.jpeg"
+  },{
+    "subTitle" : "KK Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-05.jpeg"
+  },{
+    "subTitle" : "Kumar Sanu Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-06.jpeg"
+  },{
+    "subTitle" : "Udit Narayan Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-07.jpeg"
+  },{
+    "subTitle" : "Yo Yo Honey Singh Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-08.jpeg"
+  },{
+    "subTitle" : "Alka Yagnik Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-09.jpeg"
+  },{
+    "subTitle" : "A.R. Rahman Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-10.jpeg"
+  },{
+    "subTitle" : "Masoom Sharma Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-11.jpeg"
+  },{
+    "subTitle" : "S.P. Balasubrahmanya...",
+    "imgSrc" : "assets/Images/popular_radio/pr-12.jpeg"
+  },{
+    "subTitle" : "Ilaiyaraaja Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-13.jpeg"
+  },{
+    "subTitle" : "Mohammed Rafi Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-14.jpeg"
+  },{
+    "subTitle" : "Sidhu Moose Wala Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-15.jpeg"
+  },{
+    "subTitle" : "Karan Aujla Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-16.jpeg"
+  },{
+    "subTitle" : "Atif Aslam Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-17.jpeg"
+  },{
+    "subTitle" : "Lata Mangeshkar Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-18.jpeg"
+  },{
+    "subTitle" : "G.V. Prakash Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-19.jpeg"
+  },{
+    "subTitle" : "Deva Radio",
+    "imgSrc" : "assets/Images/popular_radio/pr-20.jpeg"
+  }]
+},{
+  "title" : "Featured Charts",
+  "items" : [{
+    "subTitle" : "Top Songs - Global",
+    "imgSrc" : "../assets/Images/featured_chart/weekly_global.jpg"
+  },{
+    "subTitle" : "Top Songs - India",
+    "imgSrc" : "../assets/Images/featured_chart/weekly_india.jpg"
+  },{
+    "subTitle" : "Top 50 - Global",
+    "imgSrc" : "../assets/Images/featured_chart/top_global.jpg"
+  },{
+    "subTitle" : "Top 50 - India",
+    "imgSrc" : "../assets/Images/featured_chart/top_india.jpg"
+  },{
+    "subTitle" : "Viral 50 - Global",
+    "imgSrc" : "../assets/Images/featured_chart/viral_global.jpg"
+  },{
+    "subTitle" : "Viral 50 - India",
+    "imgSrc" : "../assets/Images/featured_chart/viral_india.jpg"
+  }]
+},{
+  "title" : "India's Best",
+  "items" : [{
+    "subTitle" : "Cheer for Chennai",
+    "imgSrc" : "assets/Images/indias_best/ib-01.jpeg"
+  },{
+    "subTitle" : "Jhakaas Mumbai",
+    "imgSrc" : "assets/Images/indias_best/ib-02.jpeg"
+  },{
+    "subTitle" : "Hyderabad Hitters",
+    "imgSrc" : "assets/Images/indias_best/ib-03.jpeg"
+  },{
+    "subTitle" : "Rajasthan Roars",
+    "imgSrc" : "assets/Images/indias_best/ib-04.jpeg"
+  },{
+    "subTitle" : "Bollywood Central",
+    "imgSrc" : "assets/Images/indias_best/ib-05.jpeg"
+  },{
+    "subTitle" : "RAP 91",
+    "imgSrc" : "assets/Images/indias_best/ib-06.jpeg"
+  },{
+    "subTitle" : "Yo Hai Haryanvi!",
+    "imgSrc" : "assets/Images/indias_best/ib-07.jpeg"
+  },{
+    "subTitle" : "Punjabi 101",
+    "imgSrc" : "assets/Images/indias_best/ib-08.jpeg"
+  },{
+    "subTitle" : "Kollywood Cream",
+    "imgSrc" : "assets/Images/indias_best/ib-09.jpeg"
+  },{
+    "subTitle" : "I-Pop Icons",
+    "imgSrc" : "assets/Images/indias_best/ib-10.jpeg"
+  },{
+    "subTitle" : "Tollywood Pearls",
+    "imgSrc" : "assets/Images/indias_best/ib-11.jpeg"
+  },{
+    "subTitle" : "Indie India",
+    "imgSrc" : "assets/Images/indias_best/ib-12.jpeg"
+  }]
+}]

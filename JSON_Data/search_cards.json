@@ -4,274 +4,274 @@
   "bgColor":"rgb(220,20,140)"
 },{
   "title":"Podcasts",
-  "imgSrc":"../assets/Images/search_cate/sp-02.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-02.jpeg",
   "bgColor":"rgb(0, 100, 80)"
 },{
   "title":"New Releases",
-  "imgSrc":"../assets/Images/search_cate/sp-05.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-05.jpeg",
   "bgColor":"rgb(96, 129, 8)"
 },{
   "title":"Hindi",
-  "imgSrc":"../assets/Images/search_cate/sp-06.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-06.jpeg",
   "bgColor":"rgb(220,20,140)"
 },{
   "title":"Telugu",
-  "imgSrc":"../assets/Images/search_cate/sp-07.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-07.jpeg",
   "bgColor":"rgb(186, 93, 7)"
 },{
   "title":"Punjabi",
-  "imgSrc":"../assets/Images/search_cate/sp-08.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-08.jpeg",
   "bgColor":"rgb(176, 40, 151)"
 },{
   "title":"Podcast Charts",
-  "imgSrc":"../assets/Images/search_cate/sp-09.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-09.jpeg",
   "bgColor":"rgb(13, 115, 236)"
 },{
   "title":"Video Podcasts",
-  "imgSrc":"../assets/Images/search_cate/sp-11.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-11.jpeg",
   "bgColor":"rgb(225, 51, 0)"
 },{
   "title":"Business & Technology",
-  "imgSrc":"../assets/Images/search_cate/sp-12.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-12.jpeg",
   "bgColor":"rgb(119, 119, 119)"
 },{
   "title":"Charts",
-  "imgSrc":"../assets/Images/search_cate/sp-13.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-13.jpeg",
   "bgColor":"rgb(141, 103, 171)"
 },{
   "title":"Tamil",
-  "imgSrc":"../assets/Images/search_cate/sp-14.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-14.jpeg",
   "bgColor":"rgb(186, 93, 7)"
 },{
   "title":"Malyalam",
-  "imgSrc":"../assets/Images/search_cate/sp-15.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-15.jpeg",
   "bgColor":"rgb(71, 125, 149)"
 },{
   "title":"Bhojpuri",
-  "imgSrc":"../assets/Images/search_cate/sp-16.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-16.jpeg",
   "bgColor":"rgb(225, 51, 0)"
 },{
   "title":"Gazals",
-  "imgSrc":"../assets/Images/search_cate/sp-17.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-17.jpeg",
   "bgColor":"rgb(119, 119, 119)"
 },{
   "title":"Discover",
-  "imgSrc":"../assets/Images/search_cate/sp-18.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-18.jpeg",
   "bgColor":"rgb(141, 103, 171)"
 },{
   "title":"Summer",
-  "imgSrc":"../assets/Images/search_cate/sp-19.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-19.jpeg",
   "bgColor":"rgb(39, 133, 106)"
 },{
   "title":"Pop",
-  "imgSrc":"../assets/Images/search_cate/sp-20.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-20.jpeg",
   "bgColor":"rgb(71, 125, 149)"
 },{
   "title":"Indie",
-  "imgSrc":"../assets/Images/search_cate/sp-21.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-21.jpeg",
   "bgColor":"rgb(233, 20, 41)"
 },{
   "title":"Love",
-  "imgSrc":"../assets/Images/search_cate/sp-22.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-22.jpeg",
   "bgColor":"rgb(220, 20, 140)"
 },{
   "title":"Trending",
-  "imgSrc":"../assets/Images/search_cate/sp-23.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-23.jpeg",
   "bgColor":"rgb(176, 40, 151)"
 },{
   "title":"Mood",
-  "imgSrc":"../assets/Images/search_cate/sp-24.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-24.jpeg",
   "bgColor":"rgb(225, 17, 140)"
 },{
   "title":"Party",
-  "imgSrc":"../assets/Images/search_cate/sp-25.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-25.jpeg",
   "bgColor":"rgb(141, 103, 171)"
 },{
   "title":"Decades",
-  "imgSrc":"../assets/Images/search_cate/sp-27.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-27.jpeg",
   "bgColor":"rgb(165, 103, 82)"
 },{
   "title":"Hip-Hop",
-  "imgSrc":"../assets/Images/search_cate/sp-28.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-28.jpeg",
   "bgColor":"rgb(71, 125, 149)"
 },{
   "title":"Dance / Electronic",
-  "imgSrc":"../assets/Images/search_cate/sp-29.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-29.jpeg",
   "bgColor":"rgb(71, 125, 149)"
 },{
   "title":"Student",
-  "imgSrc":"../assets/Images/search_cate/sp-30.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-30.jpeg",
   "bgColor":"rgb(175, 40, 150)"
 },{
   "title":"Chill",
-  "imgSrc":"../assets/Images/search_cate/sp-31.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-31.jpeg",
   "bgColor":"rgb(176, 98, 57)"
 },{
   "title":"Gaming",
-  "imgSrc":"../assets/Images/search_cate/sp-32.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-32.jpeg",
   "bgColor":"rgb(232, 17, 91)"
 },{
   "title":"K-Pop",
-  "imgSrc":"../assets/Images/search_cate/sp-33.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-33.jpeg",
   "bgColor":"rgb(230, 30, 50)"
 },{
   "title":"Workout",
-  "imgSrc":"../assets/Images/search_cate/sp-34.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-34.jpeg",
   "bgColor":"rgb(119, 119, 119)"
 },{
   "title":"RADAR",
-  "imgSrc":"../assets/Images/search_cate/sp-35.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-35.jpeg",
   "bgColor":"rgb(165, 103, 82)"
 },{
   "title":"EQUAL",
-  "imgSrc":"../assets/Images/search_cate/sp-36.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-36.jpeg",
   "bgColor":"rgb(20, 138, 8)"
 },{
   "title":"Fresh Finds",
-  "imgSrc":"../assets/Images/search_cate/sp-37.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-37.jpeg",
   "bgColor":"rgb(255, 0, 144)"
 },{
   "title":"Rock",
-  "imgSrc":"../assets/Images/search_cate/sp-38.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-38.jpeg",
   "bgColor":"rgb(0, 100, 80)"
 },{
   "title":"Sleep",
-  "imgSrc":"../assets/Images/search_cate/sp-39.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-39.jpeg",
   "bgColor":"rgb(30, 50, 100)"
 },{
   "title":"Indian Classical",
-  "imgSrc":"../assets/Images/search_cate/sp-40.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-40.jpeg",
   "bgColor":"rgb(125, 75, 50)"
 },{
   "title":"Instrumental",
-  "imgSrc":"../assets/Images/search_cate/sp-41.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-41.jpeg",
   "bgColor":"rgb(83, 122, 161)"
 },{
   "title":"Spotify Singles",
-  "imgSrc":"../assets/Images/search_cate/sp-42.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-42.jpeg",
   "bgColor":"rgb(119, 119, 119)"
 },{
   "title":"At Home",
-  "imgSrc":"../assets/Images/search_cate/sp-43.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-43.jpeg",
   "bgColor":"rgb(81, 121, 161)"
 },{
   "title":"Country",
-  "imgSrc":"../assets/Images/search_cate/sp-44.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-44.jpeg",
   "bgColor":"rgb(216, 64, 0)"
 },{
   "title":"R & B",
-  "imgSrc":"../assets/Images/search_cate/sp-45.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-45.jpeg",
   "bgColor":"rgb(186, 93, 7)"
 },{
   "title":"Metal",
-  "imgSrc":"../assets/Images/search_cate/sp-46.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-46.jpeg",
   "bgColor":"rgb(233, 20, 41)"
 },{
   "title":"Jazz",
-  "imgSrc":"../assets/Images/search_cate/sp-47.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-47.jpeg",
   "bgColor":"rgb(141, 103, 171)"
 },{
   "title":"Classical",
-  "imgSrc":"../assets/Images/search_cate/sp-48.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-48.jpeg",
   "bgColor":"rgb(125, 75, 50)"
 },{
   "title":"Folk & Acoustic",
-  "imgSrc":"../assets/Images/search_cate/sp-49.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-49.jpeg",
   "bgColor":"rgb(188, 89, 0)"
 },{
   "title":"Focus",
-  "imgSrc":"../assets/Images/search_cate/sp-50.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-50.jpeg",
   "bgColor":"rgb(165, 103, 82)"
 },{
   "title":"Disney",
-  "imgSrc":"../assets/Images/search_cate/sp-51.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-51.jpeg",
   "bgColor":"rgb(176, 98, 57)"
 },{
   "title":"Soul",
-  "imgSrc":"../assets/Images/search_cate/sp-52.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-52.jpeg",
   "bgColor":"rgb(220, 20, 140)"
 },{
   "title":"Kids & Family",
-  "imgSrc":"../assets/Images/search_cate/sp-53.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-53.jpeg",
   "bgColor":"rgb(13, 115, 236)"
 },{
   "title":"Anime",
-  "imgSrc":"../assets/Images/search_cate/sp-54.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-54.jpeg",
   "bgColor":"rgb(13, 115, 236)"
 },{
   "title":"TV & Movies",
-  "imgSrc":"../assets/Images/search_cate/sp-55.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-55.jpeg",
   "bgColor":"rgb(20, 138, 8)"
 },{
   "title":"Punk",
-  "imgSrc":"../assets/Images/search_cate/sp-56.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-56.jpeg",
   "bgColor":"rgb(230, 30, 50)"
 },{
   "title":"Ambient",
-  "imgSrc":"../assets/Images/search_cate/sp-57.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-57.jpeg",
   "bgColor":"rgb(20, 138, 8)"
 },{
   "title":"Blues",
-  "imgSrc":"../assets/Images/search_cate/sp-58.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-58.jpeg",
   "bgColor":"rgb(230, 30, 50)"
 },{
   "title":"Cooking & Dining",
-  "imgSrc":"../assets/Images/search_cate/sp-59.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-59.jpeg",
   "bgColor":"rgb(186, 93, 7)"
 },{
   "title":"Alternative",
-  "imgSrc":"../assets/Images/search_cate/sp-60.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-60.jpeg",
   "bgColor":"rgb(225, 51, 0)"
 },{
   "title":"Wellness",
-  "imgSrc":"../assets/Images/search_cate/sp-61.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-61.jpeg",
   "bgColor":"rgb(20, 138, 8)"
 },{
   "title":"Travel",
-  "imgSrc":"../assets/Images/search_cate/sp-62.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-62.jpeg",
   "bgColor":"rgb(13, 114, 237)"
 },{
   "title":"Caribbean",
-  "imgSrc":"../assets/Images/search_cate/sp-63.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-63.jpeg",
   "bgColor":"rgb(13, 115, 236)"
 },{
   "title":"Afro",
-  "imgSrc":"../assets/Images/search_cate/sp-64.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-64.jpeg",
   "bgColor":"rgb(140, 25, 50)"
 },{
   "title":"Songwriters",
-  "imgSrc":"../assets/Images/search_cate/sp-65.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-65.jpeg",
   "bgColor":"rgb(140, 25, 50)"
 },{
   "title":"Nature & Noise",
-  "imgSrc":"../assets/Images/search_cate/sp-66.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-66.jpeg",
   "bgColor":"rgb(71, 125, 149)"
 },{
   "title":"Funk & Disco",
-  "imgSrc":"../assets/Images/search_cate/sp-67.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-67.jpeg",
   "bgColor":"rgb(71, 125, 149)"
 },{
   "title":"Netflix",
-  "imgSrc":"../assets/Images/search_cate/sp-68.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-68.jpeg",
   "bgColor":"rgb(230, 30, 50)"
 },{
   "title":"Asian Pacific Islander",
-  "imgSrc":"../assets/Images/search_cate/sp-69.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-69.jpeg",
   "bgColor":"rgb(245, 155, 35)"
 },{
   "title":"GLOW",
-  "imgSrc":"../assets/Images/search_cate/sp-70.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-70.jpeg",
   "bgColor":"rgb(13, 115, 236)"
 },{
   "title":"Music + Talk",
-  "imgSrc":"../assets/Images/search_cate/sp-71.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-71.jpeg",
   "bgColor":"rgb(255, 70, 50)"
 },{
   "title":"Latin",
-  "imgSrc":"../assets/Images/search_cate/sp-72.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-72.jpeg",
   "bgColor":"rgb(13, 115, 236)"
 },{
   "title":"Tastemakers",
-  "imgSrc":"../assets/Images/search_cate/sp-73.jpeg",
+  "imgSrc":"assets/Images/search_cate/sp-73.jpeg",
   "bgColor":"rgb(232, 17, 91)"
 }]

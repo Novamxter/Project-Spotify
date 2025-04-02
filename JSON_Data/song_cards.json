@@ -251,22 +251,22 @@
   "title" : "Featured Charts",
   "items" : [{
     "subTitle" : "Top Songs - Global",
-    "imgSrc" : "../assets/Images/featured_chart/weekly_global.jpg"
+    "imgSrc" : "assets/Images/featured_chart/weekly_global.jpg"
   },{
     "subTitle" : "Top Songs - India",
-    "imgSrc" : "../assets/Images/featured_chart/weekly_india.jpg"
+    "imgSrc" : "assets/Images/featured_chart/weekly_india.jpg"
   },{
     "subTitle" : "Top 50 - Global",
-    "imgSrc" : "../assets/Images/featured_chart/top_global.jpg"
+    "imgSrc" : "assets/Images/featured_chart/top_global.jpg"
   },{
     "subTitle" : "Top 50 - India",
-    "imgSrc" : "../assets/Images/featured_chart/top_india.jpg"
+    "imgSrc" : "assets/Images/featured_chart/top_india.jpg"
   },{
     "subTitle" : "Viral 50 - Global",
-    "imgSrc" : "../assets/Images/featured_chart/viral_global.jpg"
+    "imgSrc" : "assets/Images/featured_chart/viral_global.jpg"
   },{
     "subTitle" : "Viral 50 - India",
-    "imgSrc" : "../assets/Images/featured_chart/viral_india.jpg"
+    "imgSrc" : "assets/Images/featured_chart/viral_india.jpg"
   }]
 },{
   "title" : "India's Best",

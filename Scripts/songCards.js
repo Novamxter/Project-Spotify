@@ -8,6 +8,7 @@ export async function addSongs() {
     data.forEach((row) => {
       createSection(row)
     });
+    createFooter()
   } catch (e) {
     console.log("JSON data not fetched ..",e);
   }
@@ -37,4 +38,55 @@ function createItems(items){
     mainDiv.appendChild(div)
   })
   return mainDiv.outerHTML
+}
+
+function createFooter(){
+  let html =
+   `<footer class="lap-footer">
+      <div class="right-footer">
+        <div class="footer-links-one">
+          <div>
+            <p>Company</p>
+            <a href="#">About</a>
+            <a href="#">Job</a>
+            <a href="#">For the Record</a>
+          </div>
+          <div>
+            <p>Communities</p>
+            <a href="#">For Artists</a>
+            <a href="#">Developers</a>
+            <a href="#">Advertising</a>
+            <a href="#">Investors</a>
+            <a href="#">Vendors</a>
+          </div>
+          <div>
+            <p>Useful links</p>
+            <a href="#">Support</a>
+            <a href="#">Free Mobile App</a>
+          </div>
+          <div>
+            <p>Spotify Plans</p>
+            <a href="#">Premium Individual</a>
+            <a href="#">Premium Duo</a>
+            <a href="#">Premium Family</a>
+            <a href="#">Premium Student</a>
+            <a href="#">Spotify Free</a>
+          </div>
+        </div>
+        <ul class="footer-list">
+          <a href="#"
+            ><li><img src="./assets/Svg/insta.svg" alt="" /></li
+          ></a>
+          <a href="#"
+            ><li><img src="./assets/Svg/twitter.svg" alt="" /></li
+          ></a>
+          <a href="#"
+            ><li><img src="./assets/Svg/facebook.svg" alt="" /></li
+          ></a>
+        </ul>
+      </div>
+      <div class="footer-line"></div>
+      <a href="#">&#169; 2025 Spotify AB</a>
+    </footer>`
+  document.querySelector('.main-right-section').innerHTML += html
 }

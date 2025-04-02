@@ -26,7 +26,18 @@
   header .navbar-two {
     display: flex;
   }
-
+  .mobile-footer{
+    display: none;
+  }
+  .lap-footer{
+    display: block;
+  }
+  .right-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    /* align-items: flex-start; */
+  }
 }
 @media screen and (min-width:686px){
   header .navbar-two .logo-2 {
@@ -95,5 +106,10 @@
     display: flex;
     flex-grow: 1;
     align-items: center;
+  }
+}
+@media screen and (min-width:1072px){
+  .right-footer .footer-links-one{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

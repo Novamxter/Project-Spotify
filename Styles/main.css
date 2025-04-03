@@ -466,9 +466,68 @@ main{
   /* background-color: red; */
   background-color: rgb(18, 18, 18);
   margin: 10px;
+  padding: 8px;
   border-radius: 10px;
   height: 79vh;
+  box-sizing: border-box;
 } 
+.main-left-section .library-top{
+  display: flex;
+  justify-content: space-between;
+  padding: 13px;
+  height: 40px;
+}
+.main-left-section .library-top h3{
+  font-size: 15px;
+}
+.main-left-section .library-top img{
+  height: 16px;
+  filter: invert(1);
+}
+.main-left-section .library-card-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  overflow-y: auto;
+  height: 185px;
+  padding:13px 0;
+}
+.main-left-section .library-card-container::-webkit-scrollbar{
+  width: 12px;
+}
+.main-left-section .library-card-container::-webkit-scrollbar-track{
+  background: transparent;
+}
+.main-left-section .library-card-container::-webkit-scrollbar-thumb{
+  background: rgb(100, 100, 100);
+}
+.main-left-section .library-card-container::-webkit-scrollbar-thumb:hover{
+  background: rgb(143, 143, 143);
+}
+.main-left-section .library-card{
+  background-color: rgb(31, 31, 31);
+  padding: 18px;
+  border-radius: 12px;
+}
+.main-left-section .library-card h4{
+  font-weight: 700;
+  font-size: 15px;
+}
+.main-left-section .library-card p{
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 13px;
+  margin-bottom: 18px;
+}
+.main-left-section .library-card .library-btn{
+  border: none;
+  background-color: white;
+  color: rgb(16, 16, 16);
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 12px;
+}
 /*--------main-right-section---------*/
 .main-right-section {
   width: 69vw;
@@ -477,9 +536,10 @@ main{
   border-radius: 10px;
   height: 79vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .main-right-section::-webkit-scrollbar{
-  width: 15px;
+  width: 13px;
 }
 .main-right-section::-webkit-scrollbar-track{
   background: transparent;
@@ -568,21 +628,21 @@ footer .footer-line{
   width: 100%;
   background-color:rgba(73,73,73,0.601);
 }
-footer .footer-links-two{
+.footer-links-two{
   padding: 35px 0;
 }
-footer .footer-links-two div{
+.footer-links-two div{
   display: flex;
   flex-wrap: wrap;
   column-gap: 17px;
   row-gap: 13px;
 }
-footer .footer-links-two div a{
+.footer-links-two div a{
   text-decoration: none;
   color: rgb(183,183,183);
   font-size: 13px;
 }
-footer .footer-links-two .lang-btn{
+.footer-links-two .lang-btn{
   height: 30px;
   background-color: transparent;
   border: 1px solid rgba(76,76,76,0.878);
@@ -596,8 +656,9 @@ footer .footer-links-two .lang-btn{
   justify-content: center;
   gap: 5px;
 }
-footer .footer-links-two .lang-btn img{
+.footer-links-two .lang-btn img{
   height: 15px;
+  filter: invert(1);
 }
 
 .lap-footer{
@@ -627,4 +688,22 @@ footer .footer-links-two .lang-btn img{
 }
 .lap-footer .footer-list{
   margin: 0;
+}
+.library-bottom{
+  padding: 5px 15px;
+}
+.library-bottom .footer-links-two div{
+  row-gap: 15px;
+}
+.library-bottom .footer-links-two a{
+  font-size: 11px;
+}
+.library-bottom .footer-links-two p{
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+.library-bottom .lang-btn {
+  font-weight: 800;
+  font-size: 12px;
 }

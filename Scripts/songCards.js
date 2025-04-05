@@ -44,7 +44,7 @@ function renderSections(data) {
 function filterItems(items) {
   let width = window.innerWidth;
   if (width >= 1160) return items.slice(0, 5);
-  if (width >= 960 && width < 1160) return items.slice(0, 4);
+  if (width >= 858 && width < 1160) return items.slice(0, 4);
   return items;
 }
 

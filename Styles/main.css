@@ -8,6 +8,7 @@ body {
   font-family: "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN",
     "MS Gothic";
   color: white;
+  box-sizing: border-box; 
 }
 header .navbar-one {
   padding: 5px 15px;
@@ -471,25 +472,29 @@ header .ham-container-two .second-ham-items ul {
   display: flex;
   flex-direction: column;
   /* margin-top: 53px; */
-  height: 89vh;
+  height: calc(78vh+55px);
+  box-sizing: border-box;
 }
 /*--------main-left-section---------*/
 main{
-  margin-top: 53px;
+  margin-top: clamp(43px,7vw,55px);
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
 }
 .main-left-section{
   width: 31vw;
+  min-width: 290px;
   height: 100vh;
+  max-height: 850px;
   /* background-color: red; */
   background-color: rgb(18, 18, 18);
-  margin: 10px;
+  margin: 10px 10px 0 10px;
   /* padding: 8px; */
   border-radius: 10px;
-  height: 79vh;
+  height: 77vh;
   box-sizing: border-box;
+  position: relative;
 } 
 .main-left-section .library-top{
   display: flex;
@@ -585,10 +590,11 @@ main{
   box-sizing: border-box;
   width: 69vw;
   background-color: rgb(18, 18, 18);
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 0 0;
   padding-right:20px;
   border-radius: 10px;
-  height: 79vh;
+  height: 77vh;
+  max-height: 850px;
   overflow-y: hidden;
 }
 .main-right-section::-webkit-scrollbar{
@@ -630,9 +636,13 @@ main{
 .main-right-section .song-section .song-card:hover{
   background-color:rgb(35,35,35);
 }
+.main-right-section .song-section .song-title{
+  max-width: 140px;
+}
 .main-right-section .song-section .song-img img{
   height:150px;
-  width: 150px;
+  /* width: 150px; */
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
@@ -748,6 +758,10 @@ footer .footer-line{
 }
 .library-bottom{
   padding: 5px 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .library-bottom .footer-links-two div{
   row-gap: 15px;
@@ -766,6 +780,32 @@ footer .footer-line{
 }
 /*-------------sign-up-free-----------*/
 .footer-sign-up{
-  background: linear-gradient(to top right,#a0258b,#519bf5);
+  background: linear-gradient(to right,#a0258b,#519bf5);
   margin: 8px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-sign-up .f-sign-up-content{
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  padding: 7px 15px;
+}
+.footer-sign-up .f-sign-up-content h5{
+  font-weight: 750;
+}
+.footer-sign-up .f-sign-up-content p{
+  font-size: 16px;
+}
+.footer-sign-up .sign-up-free-btn{
+  border: none;
+  background-color: white;
+  height: 45px;
+  padding: 0 25px;
+  font-size: 15px;
+  font-weight: 750;
+  border-radius: 35px;
+  margin-right: 13px;
 }

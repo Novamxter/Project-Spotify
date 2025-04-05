@@ -93,6 +93,12 @@
   header .navbar-two .nav-second-sec {
     margin-right: 0;
   }
+  .main-right-section .song-section .song-items{
+    justify-content: space-between;
+  }
+  .main-right-section .song-section .song-img img{
+    height: clamp(90px,13vw,160px);
+  }
 }
 @media screen and (min-width: 1054px) {
   header .navbar-two .left-icons {
@@ -111,5 +117,11 @@
 @media screen and (min-width:1072px){
   .right-footer .footer-links-one{
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width:1158px){
+  .main-right-section .song-section .song-img img{
+    height: clamp(90px,11vw,160px);
   }
 }

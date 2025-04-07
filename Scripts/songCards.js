@@ -1,3 +1,10 @@
+const screenCategories = [
+  {name: "extraLarge", min: 1731, max: 2022},
+  {name: "large",min: 1440, max: 1731},
+  {name: "mediumLarge",min: 1245, max: 1440},
+  {name: "medium", min: 1082, max: 1246},
+  {name: "small", min:0, max:1082}
+];
 let globalData = []; // store fetched JSON
 let lastScreenCategory = ""; // to avoid unnecessary renders
 
@@ -16,12 +23,10 @@ export async function addSongs() {
 }
 
 function getScreenCategory() {
-  let width = window.innerWidth;
-  if (width >= 1160) return "large";
-  if (width >= 960 && width < 1160) return "medium";
-  return "small";
+  const width = window.innerWidth;
+  const category = screenCategories.find(cat => width > cat.min && width <= cat.max);
+  return category ? category.name : "unknown";
 }
-
 function handleResize(data) {
   const currentCategory = getScreenCategory();
   if (currentCategory !== lastScreenCategory) {
@@ -40,12 +45,21 @@ function renderSections(data) {
 
   createFooter(container);
 }
-
 function filterItems(items) {
-  let width = window.innerWidth;
-  if (width >= 1160) return items.slice(0, 5);
-  if (width >= 858 && width < 1160) return items.slice(0, 4);
-  return items;
+  const category = getScreenCategory();
+
+  switch (category) {
+    case "extraLarge":
+      return items.slice(0, 7);
+    case "large":
+      return items.slice(0, 6);
+    case "mediumLarge":
+      return items.slice(0, 5);
+    case "medium":
+      return items.slice(0, 4);
+    default:
+      return items;
+  }
 }
 
 function createSection(item, parent) {
@@ -82,7 +96,7 @@ function createFooter(parent) {
   footer.className = "lap-footer";
   footer.innerHTML = `
     <div class="right-footer">
-      <div class="footer-links-one">
+      <div class="footer-links-one right-footer-links">
         <div>
           <p>Company</p>
           <a href="#">About</a>
@@ -110,15 +124,29 @@ function createFooter(parent) {
           <a href="#">Premium Student</a>
           <a href="#">Spotify Free</a>
         </div>
-      </div>
-      <ul class="footer-list">
+        <ul class="footer-list">
         <a href="#"><li><img src="./assets/Svg/insta.svg" alt="" /></li></a>
-        <a href="#"><li><img src="./assets/Svg/twitter.svg" alt="" /></li></a>
-        <a href="#"><li><img src="./assets/Svg/facebook.svg" alt="" /></li></a>
-      </ul>
+          <a href="#"><li><img src="./assets/Svg/twitter.svg" alt="" /></li></a>
+          <a href="#"><li><img src="./assets/Svg/facebook.svg" alt="" /></li></a>
+        </ul>
+      </div>
     </div>
     <div class="footer-line"></div>
-    <a href="#">&#169; 2025 Spotify AB</a>
+    <div class="footer-links-two">
+      <div>
+            <a href="#" class="switchable">Legal</a>
+            <a href="#" class="switchable">Safety & Privacy Center</a>
+            <a href="#" class="switchable">Privacy Policy</a>
+            <a href="#" class="switchable">Cookies</a>
+            <a href="#" class="switchable">About Ads</a>
+            <a href="#" class="switchable">Accessibility</a>
+            <a href="#">&#169; 2025 Spotify AB</a>
+          </div>
+          <button class="lang-btn switchable"">
+            <img src="./assets/Svg/web.svg" alt="" />
+            <span>English</span>
+          </button>
+        </div>
   `;
   parent.appendChild(footer);
 }

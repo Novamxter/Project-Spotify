@@ -1,0 +1,78 @@
+[{
+  "name":"Cheri Cheri Lady",
+  "cover":"assets/Images/songs_cover/Chery-chery-lady.jpeg",
+  "song":"../assets/Songs/Cheri-Cheri-Lady.mp3",
+  "by":"Modern Talking",
+  "bgcolor":"rgb(108, 123, 108)",
+  "explicit" : "false"
+},{
+  "name":"MONEY",
+  "cover":"assets/Images/songs_cover/Money.jpeg",
+  "song":"../assets/Songs/Money_(Lisa).mp3",
+  "by":"Lisa",
+  "bgcolor":"rgb(119,119,119)",
+  "explicit" : "false"
+},{
+  "name":"Intentions",
+  "cover":"assets/Images/songs_cover/Intentions.jpeg",
+  "song":"../assets/Songs/Justin Bieber - Intentions.mp3",
+  "by":"Justin Bieber, Quavo",
+  "bgcolor":"rgb(217, 60, 45)",
+  "explicit" : "false"
+},{
+  "name":"Money Trees",
+  "cover":"assets/Images/songs_cover/Money-trees.jpeg",
+  "song":"../assets/Songs/Money Trees.mp3",
+  "by":"Kendrick Lamar, Jay Rock",
+  "bgcolor":"rgb(118, 118, 122)",
+  "explicit" : "true"
+},{
+  "name":"Hass Hass",
+  "cover":"assets/Images/songs_cover/Has-has.jpeg",
+  "song":"../assets/Songs/Hass Hass - Diljit X Sia.mp3",
+  "by":"Diljit Dosanjh, Sia, Greg Kurstin",
+  "bgcolor":"rgb(201, 72, 115)",
+  "explicit" : "false"
+},{
+  "name":"Shivers",
+  "cover":"assets/Images/songs_cover/Shivers.jpeg",
+  "song":"../assets/Songs/Ed Sheeran - Shivers.mp3",
+  "by":"Ed Sheeran",
+  "bgcolor":"rgb(216, 8, 24)",
+  "explicit" : "false"
+},{
+  "name":"Ransom",
+  "cover":"assets/Images/songs_cover/Ransom.jpeg",
+  "song":"../assets/Songs/Lil Tecca - Ransom.mp3",
+  "by":"Lil Tecca",
+  "bgcolor":"rgb(209, 72, 50)",
+  "explicit" : "true"
+},{
+  "name":"Diet Mountain Dew",
+  "cover":"assets/Images/songs_cover/Mauntain-dew.jpeg",
+  "song":"../assets/Songs/Lana Del Rey - Diet Mountain Dew.mp3",
+  "by":"Lana Del Rey",
+  "bgcolor":"rgb(133, 117, 72)",
+  "explicit" : "false"
+},{
+  "name":"Intro (Infected)",
+  "cover":"assets/Images/songs_cover/infected.jpeg",
+  "song":"../assets/Songs/Sickick - Infected.mp3",
+  "by":"Sickick",
+  "bgcolor":"rgb(119,119,119)",
+  "explicit" : "false"
+},{
+  "name":"Sunflower - Spider-Man: Into the Spider-Verse",
+  "cover":"assets/Images/songs_cover/Sunflower.jpeg",
+  "song":"../assets/Songs/Sunflower.mp3",
+  "by":"Post Malone, Swae Lee",
+  "bgcolor":"rgb(232, 0, 8)",
+  "explicit" : "false"
+},{
+  "name":"Levitating",
+  "cover":"assets/Images/songs_cover/Levitating.jpeg",
+  "song":"../assets/Songs/Levitating.mp3",
+  "by":"Dua Lipa",
+  "bgcolor":"rgb(83, 124, 148)",
+  "explicit" : "false"
+}]

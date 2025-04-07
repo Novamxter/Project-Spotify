@@ -66,11 +66,11 @@ function createSection(item, parent) {
   const section = document.createElement("div");
   section.className = "song-section";
   section.innerHTML = `<h3>${item.title}</h3>`;
-  section.innerHTML += createItems(item.items);
+  section.innerHTML += createItems(item.items,item.title);
   parent.appendChild(section);
 }
 
-function createItems(items) {
+function createItems(items,name) {
   const mainDiv = document.createElement("div");
   mainDiv.className = "song-items";
   const filtered = filterItems(items);
@@ -80,7 +80,10 @@ function createItems(items) {
     div.className = "song-card";
     div.innerHTML = `
       <div class="song-img">
-        <img src="${item.imgSrc}" alt="${item.subTitle}" loading="lazy">
+        <img src="${item.imgSrc}" alt="${item.subTitle}" class="${name==="Popular artists"?"round":""}" loading="lazy">
+        <div class="play-btn-hover">
+          <img src="./assets/Svg/play.svg">
+        </div>
       </div>
       <div class="song-title">
         <p>${item.subTitle}</p>

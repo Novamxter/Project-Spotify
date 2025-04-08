@@ -27,7 +27,7 @@ function renderSections(data, playlists) {
   const mainSongsContainer = document.createElement("section");
   mainSongsContainer.className = "main-songs-container";
   mainSongsContainer.innerHTML = "";
-  container.innerHTML = ""; // clear old content
+  mainSongsContainer.innerHTML = ""; // clear old content
 
   let clonedData = [...data];
   let last = clonedData.pop();

@@ -42,7 +42,8 @@
             />
           </button>
           <button class="mob-lib-icon-btn">
-            <img src="./assets/Svg/wrapper.svg" alt="" class="mob-lib-icon" />
+            <img src="./assets/Svg/wrapper.svg" alt="" class="mob-lib-icon lib-icon-default" style="display:block;"/>
+            <img src="./assets/Svg/wrapperActive.svg" alt="" class="mob-lib-icon lib-icon-active" style="display:none;">
           </button>
         </div>
         <div class="right">
@@ -94,12 +95,14 @@
                 />
                 <div class="search-line"></div>
                 <button class="search-wrapper-btn">
-                  <img src="./assets/Svg/wrapper.svg" alt="" />
+                  <img src="./assets/Svg/wrapper.svg" alt="" class="lib-icon-default" style="display: block;"/>
+                  <img src="./assets/Svg/wrapperActive.svg" alt="" class="lib-icon-active" style="display:none;">
                 </button>
               </div>
             </div>
             <button class="left-icon-container lib-icon">
-              <img src="./assets/Svg/wrapper.svg" alt="" class="left-icon" />
+              <img src="./assets/Svg/wrapper.svg" alt="" class="left-icon" style="display: block;"/>
+              <img src="./assets/Svg/wrapperActive.svg" alt="" class="left-icon lib-icon-active" style="display:none;">
             </button>
           </div>
         </section>
@@ -136,22 +139,6 @@
         </div>
       </nav>
     </header>
-    <section class="search-page">
-      <div class="search-page-bar">
-        <div>
-          <h2>Search</h2>
-          <button class="search-back-btn">
-            <img src="./assets/Svg/backArrow.svg" alt="" />
-          </button>
-        </div>
-        <div class="sp-input-cont">
-          <input type="text" placeholder="What do you want to listen to?" />
-          <img src="./assets/Svg/search.svg" alt="" />
-        </div>
-      </div>
-      <h3>Browse all</h3>
-      <div class="search-card-container"></div>
-    </section>
     <section class="main-body">
       <main>
         <section class="left-section-wrapper">
@@ -196,10 +183,21 @@
           </section>
         </section>
         <section class="main-right-section">
-          <section class="song-section">
-            <div class="song-card">
-              
+          <section class="search-page">
+            <div class="search-page-bar">
+              <div>
+                <h2>Search</h2>
+                <button class="search-back-btn">
+                  <img src="./assets/Svg/backArrow.svg" alt="" />
+                </button>
+              </div>
+              <div class="sp-input-cont">
+                <input type="text" placeholder="What do you want to listen to?" />
+                <img src="./assets/Svg/search.svg" alt="" />
+              </div>
             </div>
+            <h3>Browse all</h3>
+            <div class="search-card-container"></div>
           </section>
         </section>
       </main>

@@ -70,10 +70,16 @@ header .navbar-one .mob-lib-icon-btn{
   border-radius: 50%;
   height: 38px;
   min-width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header .navbar-one .left .mob-lib-icon{
   height: 20px;
 }
+/* .lib-icon-active{
+  display: none;
+} */
 header .navbar-one .right {
   display: flex;
   align-items: center;
@@ -408,13 +414,14 @@ header .ham-container-two .second-ham-items ul {
 .search-card {
   position: relative;
   overflow: hidden;
-  height: 95px;
-  width: 150px;
+  height: 25vw;
+  width: 100%;
   border-radius: 5px;
 }
 .search-card img {
   position: absolute;
-  height: 70px;
+  /* height: 70px; */
+  height: 75%;
   right: -20px;
   bottom: 0;
   transform: rotate(30deg);
@@ -626,6 +633,7 @@ main{
 .main-right-section .song-section .song-title{
   max-width: 140px;
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -681,7 +689,12 @@ main{
   width: 50%;
   border-radius: 0;
 }
-
+.main-songs-container.songs-display{
+  display: none;
+}
+.main-songs-container{
+  display: block;
+}
 /*-----------mobile-hamMenu---------*/
 .navbar-one .mobile-ham-items{
   box-sizing: border-box;

@@ -225,8 +225,9 @@
   .main-right-section .song-section .song-card{
     padding: 13px;
     border-radius: 8px;
+    max-width: clamp(90px,13vw,160px);
   }
-  .main-right-section .song-section .song-img>img{
+  .main-right-section .song-section .song-img .single-song-cover{
     height: clamp(90px,13vw,160px);
   }
 }
@@ -235,8 +236,9 @@
   .main-right-section .song-section .song-card{
     padding: 10px;
     border-radius: 8px;
+    max-width: clamp(90px,11vw,160px);
   }
-  .main-right-section .song-section .song-img>img{
+  .main-right-section .song-section .song-img .single-song-cover{
     height: clamp(90px,11vw,160px);
   }
 }

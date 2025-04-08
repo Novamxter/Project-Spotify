@@ -307,4 +307,51 @@
     "subTitle" : "Indie India",
     "imgSrc" : "assets/Images/indias_best/ib-12.jpeg"
   }]
+},{
+  "title" : "Downloads",
+  "items" : [{
+    "id":"1",
+    "subTitle" : "Sunflower - Spider-Man: Into the Spider-Verse",
+    "imgSrc" : "assets/Images/songs_cover/Sunflower.jpeg"
+  },{
+    "id":"2",
+    "subTitle" : "Hass Hass",
+    "imgSrc" : "assets/Images/songs_cover/Has-has.jpeg"
+  },{
+    "id":"3",
+    "subTitle" : "Cheri Cheri Lady",
+    "imgSrc" : "assets/Images/songs_cover/Chery-chery-lady.jpeg"
+  },{
+    "id":"4",
+    "subTitle" : "MONEY",
+    "imgSrc" : "assets/Images/songs_cover/Money.jpeg"
+  },{
+    "id":"5",
+    "subTitle" : "Intentions",
+    "imgSrc" : "assets/Images/songs_cover/Intentions.jpeg"
+  },{
+    "id":"6",
+    "subTitle" : "Money Trees",
+    "imgSrc" : "assets/Images/songs_cover/Money-trees.jpeg"
+  },{
+    "id":"7",
+    "subTitle" : "Shivers",
+    "imgSrc" : "assets/Images/songs_cover/Shivers.jpeg"
+  },{
+    "id":"8",
+    "subTitle" : "Ransom",
+    "imgSrc" : "assets/Images/songs_cover/Ransom.jpeg"
+  },{
+    "id":"9",
+    "subTitle" : "Diet Mountain Dew",
+    "imgSrc" : "assets/Images/songs_cover/Mauntain-dew.jpeg"
+  },{
+    "id":"10",
+    "subTitle" : "Intro (Infected)",
+    "imgSrc" : "assets/Images/songs_cover/infected.jpeg"
+  },{
+    "id":"11",
+    "subTitle" : "Levitating",
+    "imgSrc" : "assets/Images/songs_cover/Levitating.jpeg"
+  }]
 }]

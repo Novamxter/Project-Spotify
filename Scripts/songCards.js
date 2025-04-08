@@ -1,86 +1,68 @@
 const screenCategories = [
-  {name: "extraLarge", min: 1731, max: 2022},
-  {name: "large",min: 1440, max: 1731},
-  {name: "mediumLarge",min: 1245, max: 1440},
-  {name: "medium", min: 1082, max: 1246},
-  {name: "small", min:0, max:1082}
+  { name: "extraLarge", min: 1731, max: 2022 },
+  { name: "large", min: 1440, max: 1731 },
+  { name: "mediumLarge", min: 1245, max: 1440 },
+  { name: "medium", min: 1082, max: 1246 },
+  { name: "small", min: 0, max: 1082 }
 ];
 let globalData = []; // store fetched JSON
+let globalPlaylists = [];
 let lastScreenCategory = ""; // to avoid unnecessary renders
 
-export async function addSongs() {
-  try {
-    let response = await fetch("JSON_Data/song_cards.json");
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    globalData = await response.json();
-    renderSections(globalData);
-    window.addEventListener("resize", () => handleResize(globalData));
-  } catch (e) {
-    console.log("JSON data not fetched ..", e);
-  }
-}
-
-function getScreenCategory() {
-  const width = window.innerWidth;
-  const category = screenCategories.find(cat => width > cat.min && width <= cat.max);
-  return category ? category.name : "unknown";
-}
-function handleResize(data) {
-  const currentCategory = getScreenCategory();
-  if (currentCategory !== lastScreenCategory) {
-    renderSections(data);
-  }
-}
-
-function renderSections(data) {
-  lastScreenCategory = getScreenCategory();
-  const container = document.querySelector('.main-right-section');
-  container.innerHTML = ''; // clear old content
-
-  data.forEach((row) => {
-    createSection(row, container);
+export async function addSongs(playlists, songCards) {
+  globalData = await songCards;
+  globalPlaylists = await playlists;
+  renderSections(globalData, globalPlaylists);
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(
+      () => handleResize(globalData, globalPlaylists),10);
   });
-
-  createFooter(container);
 }
-function filterItems(items) {
-  const category = getScreenCategory();
 
-  switch (category) {
-    case "extraLarge":
-      return items.slice(0, 7);
-    case "large":
-      return items.slice(0, 6);
-    case "mediumLarge":
-      return items.slice(0, 5);
-    case "medium":
-      return items.slice(0, 4);
-    default:
-      return items;
-  }
+function renderSections(data, playlists) {
+  lastScreenCategory = getScreenCategory();
+  const container = document.querySelector(".main-right-section");
+  const mainSongsContainer = document.createElement("section");
+  mainSongsContainer.className = "main-songs-container";
+  mainSongsContainer.innerHTML = "";
+  container.innerHTML = ""; // clear old content
+
+  let clonedData = [...data];
+  let last = clonedData.pop();
+  console.log(clonedData);
+  clonedData.forEach(row => {
+    createSection(row, mainSongsContainer);
+  });
+  createPlaylistSection(playlists, mainSongsContainer);
+  createSection(last, mainSongsContainer);
+  container.appendChild(mainSongsContainer);
+  createListContainer(container);
+  createFooter(container);
 }
 
 function createSection(item, parent) {
   const section = document.createElement("div");
   section.className = "song-section";
   section.innerHTML = `<h3>${item.title}</h3>`;
-  section.innerHTML += createItems(item.items,item.title);
+  section.innerHTML += createItems(item.items, item.title);
   parent.appendChild(section);
 }
 
-function createItems(items,name) {
+function createItems(items, name) {
   const mainDiv = document.createElement("div");
   mainDiv.className = "song-items";
   const filtered = filterItems(items);
 
-  filtered.forEach((item) => {
+  filtered.forEach(item => {
     const div = document.createElement("div");
     div.className = "song-card";
     div.innerHTML = `
       <div class="song-img">
-        <img src="${item.imgSrc}" alt="${item.subTitle}" class="${name==="Popular artists"?"round":""}" loading="lazy">
+        <img src="${item.imgSrc}" alt="${item.subTitle}" class="${
+          name === "Popular artists" ? "round" : ""
+        } single-song-cover" loading="lazy">
         <div class="play-btn-hover">
           <img src="./assets/Svg/play.svg">
         </div>
@@ -92,6 +74,58 @@ function createItems(items,name) {
   });
 
   return mainDiv.outerHTML;
+}
+
+function createPlaylistSection(playlists, parent) {
+  const section = document.createElement("section");
+  section.className = "song-section";
+  section.innerHTML = `<h3>PlayLists</h3>`;
+  section.innerHTML += createPlaylists(playlists);
+  parent.appendChild(section);
+}
+
+function createPlaylists(playlists) {
+  console.log(playlists);
+  const mainDiv = document.createElement("div");
+  mainDiv.className = "song-items";
+  if (playlists.length > 1) {
+    playlists.forEach(playlist => {
+      const div = document.createElement("div");
+      div.className = "song-card";
+      div.innerHTML = `<div class="song-img">
+      ${createCover(playlist)}
+      <div class="play-btn-hover">
+        <img src="./assets/Svg/play.svg">
+      </div>
+    </div>
+    <div class="song-title">
+      <p>${playlist.title}</p>
+    </div>`;
+      mainDiv.appendChild(div);
+    });
+  } else {
+    const div = document.createElement("div");
+    div.className = "song-card";
+    div.innerHTML = `<div class="song-img">
+      <div class="single-song-cover playlist-song-cover">
+        ${createCover(playlists[0])}
+      </div>
+      <div class="play-btn-hover">
+        <img src="./assets/Svg/play.svg">
+      </div>
+    </div>
+    <div class="song-title">
+      <p>${playlists[0].title}</p>
+    </div>`;
+    mainDiv.appendChild(div);
+  }
+  return mainDiv.outerHTML;
+}
+
+function createListContainer(parent) {
+  const section = document.createElement("section");
+  section.className = "song-list-container";
+  parent.appendChild(section);
 }
 
 function createFooter(parent) {
@@ -152,4 +186,44 @@ function createFooter(parent) {
         </div>
   `;
   parent.appendChild(footer);
+}
+
+function createCover(playlist) {
+  // console.log(playlist)
+  const covers = playlist.list.slice(0, 4);
+  let html = "";
+  covers.forEach(cover => {
+    html += `<img src="${cover.cover}" alt="${cover.name}" class="playlist-cover" loading="lazy">`;
+  });
+  return html;
+}
+
+function getScreenCategory() {
+  const width = window.innerWidth;
+  const category = screenCategories.find(
+    cat => width > cat.min && width <= cat.max
+  );
+  return category ? category.name : "unknown";
+}
+function handleResize(data, playlists) {
+  const currentCategory = getScreenCategory();
+  if (currentCategory !== lastScreenCategory) {
+    renderSections(data, playlists);
+  }
+}
+function filterItems(items) {
+  const category = getScreenCategory();
+
+  switch (category) {
+    case "extraLarge":
+      return items.slice(0, 7);
+    case "large":
+      return items.slice(0, 6);
+    case "mediumLarge":
+      return items.slice(0, 5);
+    case "medium":
+      return items.slice(0, 4);
+    default:
+      return items;
+  }
 }

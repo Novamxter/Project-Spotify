@@ -40,6 +40,7 @@ function play(songData) {
   audio = new Audio(songData.song);
   audio.addEventListener("canplaythrough", () => {
     audio.play().catch(err => console.log("Autoplay blocked:", err));
+    audio.volume = 1
   });
   //audio.play();
   console.log(songData)
@@ -102,8 +103,8 @@ function renderPlayBar(songData) {
     </div>
     <div class="song-bar-icons">
       <div class="song-bar-play">
-        <img src="/assets/Svg/play.svg" alt="" class="play">
-        <img src="/assets/Svg/pause.svg" alt="" class="pause">
+        <img src="./assets/Svg/play.svg" alt="" class="play">
+        <img src="./assets/Svg/pause.svg" alt="" class="pause">
       </div>
     </div>
     <div class="song-bar-progress"></div>
@@ -260,14 +261,14 @@ function renderSongPage(data, title) {
   return `<div class="song-page">
     <div class="song-page-top">
       <button class="song-page-down">
-        <img src="/assets/Svg/downArrow.svg" alt="" class="song-page-down-img">
+        <img src="./assets/Svg/downArrow.svg" alt="" class="song-page-down-img">
       </button>
       <div class="song-top-content">
         <p>PLAYING FROM PLAYLIST</p>
         <span>${title}</span>
       </div>
       <button class="song-page-dots">
-        <img src="/assets/Svg/threeDots.svg" alt="" class="song-page-dots-img">
+        <img src="./assets/Svg/threeDots.svg" alt="" class="song-page-dots-img">
       </button>
     </div>
     <div class="song-page-main-imgwrap">
@@ -291,27 +292,27 @@ function renderSongPage(data, title) {
       </div>
       <div class="song-page-play-line">
         <div class="song-page-shuffle">
-          <img src="/assets/Svg/shuffle.svg" alt="" class="song-page-shuffle-img">
+          <img src="./assets/Svg/shuffle.svg" alt="" class="song-page-shuffle-img">
         </div>
         <div class="play-section">
           <button class="song-page-previous-btn">
-            <img src="/assets/Svg/previous.svg" alt="" class="previous-img">
+            <img src="./assets/Svg/previous.svg" alt="" class="previous-img">
           </button>
           <button class="song-page-play-btn song-bar-play">
-            <img src="/assets/Svg/play.svg" alt="" class="song-page-play-img play">
-            <img src="/assets/Svg/pause.svg" alt="" class="song-page-play-img pause">
+            <img src="./assets/Svg/play.svg" alt="" class="song-page-play-img play">
+            <img src="./assets/Svg/pause.svg" alt="" class="song-page-play-img pause">
           </button>
           <button class="song-page-next-btn">
-            <img src="/assets/Svg/next.svg" alt="" class="next-img">
+            <img src="./assets/Svg/next.svg" alt="" class="next-img">
           </button>
         </div>
         <div class="song-page-series">
-          <img src="/assets/Svg/series.svg" alt="" class="song-page-series-img">
+          <img src="./assets/Svg/series.svg" alt="" class="song-page-series-img">
         </div>
       </div>
       <div class="song-page-footer-line">
         <button class="song-page-share-button">
-          <img src="/assets/Svg/share.svg" alt="" class="song-page-share-img">
+          <img src="./assets/Svg/share.svg" alt="" class="song-page-share-img">
         </button>
       </div>
     </div>

@@ -257,6 +257,7 @@
   }
   header .navbar-two .search-bar-container {
     width: 100%;
+    max-width: 400px;
     padding-right: 17px;
   }
   header .navbar-two .search-bar {

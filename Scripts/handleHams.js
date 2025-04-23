@@ -1,45 +1,88 @@
+import {popUtils,navigate} from "./songCards.js";
+
 // Laptop Ham-Menu :
 document.querySelector('.second-ham-btn').addEventListener('click',()=>{
   document.querySelector('.second-ham-items').classList.toggle('second-ham-active')
 })
 // Mobile Ham-Menu :
-document.querySelector('.ham-container').addEventListener('click',toggleMobileHam)
-document.querySelector('.mobile-ham-close').addEventListener('click',toggleMobileHam)
+document.querySelectorAll('.mobile-ham-js').forEach((ham)=>{
+  ham.addEventListener('click',toggleMobileHam)
+})
 
 // Search Category:
-document.querySelector('.search-icon-container').addEventListener('click',toggleSearch)
-document.querySelector('.search-wrapper-btn').addEventListener('click',toggleSearch)
+document.querySelectorAll('.search-btn-js').forEach((btn)=>{
+  btn.addEventListener('click',()=>{
+    if (window.innerWidth < 1050){
+      toggleSearch()
+    }
+  })
+})
+let lapWrapper = document.querySelector('.search-wrapper-btn')
+lapWrapper.addEventListener('click',()=>{
+  toggleSearch()
+  changeLibIcon(lapWrapper)
+})
 document.querySelector('.search-back-btn').addEventListener('click',toggleSearch)
 
 // Library :
-document.querySelector('.mob-lib-icon-btn').addEventListener('click',toggleLibrary)
-document.querySelector('.search-wrapper-btn').addEventListener('click',toggleLibrary)
-document.querySelector('.lib-icon').addEventListener('click',toggleLibrary)
+let mobLibBtn = document.querySelector('.mob-lib-icon-btn')
+mobLibBtn.addEventListener('click',()=>{
+  toggleLibrary(mobLibBtn)
+})
+let libIcon = document.querySelector('.lib-icon')
+libIcon.addEventListener('click',()=>{
+  toggleLibrary(libIcon)
+})
+
 
 function toggleSearch(){
   if (window.innerWidth > 462){
     toggleMain()
   }
-  document.querySelector('.search-page').classList.toggle('page-active')
+  let container = document.querySelector('.search-page')
+  if (container.classList.contains('page-active')){
+    container.classList.remove('page-active')
+    history.back()
+  }else{
+    container.classList.add('page-active')
+    if(history.state.page !== "searchCate"){
+      navigate("home","searchCate")
+    }
+  }
 }
 function toggleMobileHam(){
-  document.querySelector('.mobile-ham-items').classList.toggle('mobile-ham-active')
-}
-function toggleLibrary(){
-  console.log("yes")
-  const leftSection = document.querySelector('.left-section-wrapper')
-  const libActive = document.querySelector('.lib-icon-active')
-  const libDefault = document.querySelector('.lib-icon-default')
-  if (libActive.style.display === "none" && libDefault.style.display ==="block"){
-    libActive.style.display = "block"
-    libDefault.style.display = "none"
-    leftSection.classList.add('library-active')
+  const ham = document.querySelector('.mobile-ham-items')
+  if(ham.classList.contains('mobile-ham-active')){
+    ham.classList.remove('mobile-ham-active')
+    history.back()
   }else{
-    libActive.style.display = "none"
-    libDefault.style.display = "block"
-    leftSection.classList.remove('library-active')
+    ham.classList.add('mobile-ham-active')
+    navigate("home","menu")
   }
+}
+export function toggleLibrary(parent,opened){
+  const leftSection = document.querySelector('.left-section-wrapper')
+  if (leftSection.classList.contains('library-active')||opened){
+    
+    leftSection.classList.remove('library-active')
+    if (history.state.page === "playlists"){
+      history.back()
+    }
+    popUtils.libOpened = false
+  }else{
+    let state = document.querySelector('.main-songs-container').dataset.pActive
+    leftSection.classList.add('library-active')
+    if (history.state.page !== state){
+      navigate("library",state)
+    }
+    popUtils.libOpened = true
+  }
+  changeLibIcon(parent)
 }
 function toggleMain(){
   document.querySelector('.main-songs-container').classList.toggle('songs-display')
+}
+
+function changeLibIcon(parent){
+  parent.classList.toggle('lib-display')
 }

@@ -1,17 +1,21 @@
 import './handleHams.js'
-import './scrollEvents.js'
 import {addCards} from './searchCard.js'
 import {addSongs} from './songCards.js'
-import {renderSongList} from './songs.js'
+import {renderSongList} from './render-songs.js'
 
 let playlists = fetchPlaylist()
 let songCards = fetchSongCards()
 
-document.addEventListener('DOMContentLoaded',()=>{
+render()
+
+async function render(){
+  document.addEventListener('DOMContentLoaded',async ()=>{
   addCards()
-  addSongs(playlists,songCards)
-  renderSongList(playlists,songCards)
+  let status = await addSongs(playlists,songCards)
+  renderSongList(playlists,songCards,status,addSongs)
+  //window.onpopstate = (e) => console.log("STATE:", history.state.page);
 })
+}
 
 async function fetchPlaylist() {
   try {

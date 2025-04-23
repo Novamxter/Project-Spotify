@@ -1,3 +1,4 @@
+import {managePlayBar} from './play-songs.js'
 const screenCategories = [
   { name: "extraLarge", min: 1731, max: 2022 },
   { name: "large", min: 1440, max: 1731 },
@@ -9,37 +10,51 @@ let globalData = []; // store fetched JSON
 let globalPlaylists = [];
 let lastScreenCategory = ""; // to avoid unnecessary renders
 
+export let popUtils = {
+  currentPage : null,
+  libOpened : false,
+  setCurrentPage(val) {
+    this.currentPage = val;
+  },
+  getCurrentPage() {
+    return this.currentPage;
+  }
+}
 export async function addSongs(playlists, songCards) {
   globalData = await songCards;
   globalPlaylists = await playlists;
-  renderSections(globalData, globalPlaylists);
-  let resizeTimeout;
+  const container = document.querySelector(".main-right-js");
+  let status = renderSections(globalData, globalPlaylists,container);
+  createFooter(container);
   window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(
-      () => handleResize(globalData, globalPlaylists),10);
+    //handleResize(globalData, globalPlaylists,container);
   });
+  return status;
 }
 
-function renderSections(data, playlists) {
-  lastScreenCategory = getScreenCategory();
-  const container = document.querySelector(".main-right-section");
+function renderSections(data, playlists,container) {
+  //lastScreenCategory = getScreenCategory();
+  //for re-rendring in song.js
+  container.innerHTML = "";
   const mainSongsContainer = document.createElement("section");
+  const homePageWrapper = document.createElement("div");
+  homePageWrapper.className = "home-page";
   mainSongsContainer.className = "main-songs-container";
-  mainSongsContainer.innerHTML = "";
-  mainSongsContainer.innerHTML = ""; // clear old content
-
+  mainSongsContainer.dataset.pActive = "home"
+  //mainSongsContainer.innerHTML = "";
+  // clear old content
   let clonedData = [...data];
   let last = clonedData.pop();
-  console.log(clonedData);
   clonedData.forEach(row => {
     createSection(row, mainSongsContainer);
   });
   createPlaylistSection(playlists, mainSongsContainer);
   createSection(last, mainSongsContainer);
-  container.appendChild(mainSongsContainer);
-  createListContainer(container);
-  createFooter(container);
+  homePageWrapper.appendChild(mainSongsContainer);
+  container.appendChild(homePageWrapper);
+  navigate("home","home")
+  handleMainMargin()
+  return true;
 }
 
 function createSection(item, parent) {
@@ -53,8 +68,9 @@ function createSection(item, parent) {
 function createItems(items, name) {
   const mainDiv = document.createElement("div");
   mainDiv.className = "song-items";
+  //console.log(items.slice(0,4))
   const filtered = filterItems(items);
-
+  //console.log(filtered)
   filtered.forEach(item => {
     const div = document.createElement("div");
     div.className = "song-card";
@@ -77,23 +93,24 @@ function createItems(items, name) {
 }
 
 function createPlaylistSection(playlists, parent) {
-  const section = document.createElement("section");
-  section.className = "song-section";
-  section.innerHTML = `<h3>PlayLists</h3>`;
-  section.innerHTML += createPlaylists(playlists);
-  parent.appendChild(section);
+  const div = document.createElement("div");
+  div.className = "song-section home-playlist-section";
+  div.innerHTML = `<h3>PlayLists</h3>`;
+  div.innerHTML += createPlaylists(playlists);
+  parent.appendChild(div);
 }
 
 function createPlaylists(playlists) {
-  console.log(playlists);
   const mainDiv = document.createElement("div");
   mainDiv.className = "song-items";
-  if (playlists.length > 1) {
-    playlists.forEach(playlist => {
-      const div = document.createElement("div");
-      div.className = "song-card";
-      div.innerHTML = `<div class="song-img">
+  playlists.forEach((playlist, index) => {
+    const div = document.createElement("div");
+    div.className = "song-card home-playlist";
+    div.dataset.index = `${index + 1}`;
+    div.innerHTML = `<div class="song-img">
+      <div class="playlist-song-cover">
       ${createCover(playlist)}
+      </div>
       <div class="play-btn-hover">
         <img src="./assets/Svg/play.svg">
       </div>
@@ -101,31 +118,9 @@ function createPlaylists(playlists) {
     <div class="song-title">
       <p>${playlist.title}</p>
     </div>`;
-      mainDiv.appendChild(div);
-    });
-  } else {
-    const div = document.createElement("div");
-    div.className = "song-card";
-    div.innerHTML = `<div class="song-img">
-      <div class="single-song-cover playlist-song-cover">
-        ${createCover(playlists[0])}
-      </div>
-      <div class="play-btn-hover">
-        <img src="./assets/Svg/play.svg">
-      </div>
-    </div>
-    <div class="song-title">
-      <p>${playlists[0].title}</p>
-    </div>`;
     mainDiv.appendChild(div);
-  }
+  });
   return mainDiv.outerHTML;
-}
-
-function createListContainer(parent) {
-  const section = document.createElement("section");
-  section.className = "song-list-container";
-  parent.appendChild(section);
 }
 
 function createFooter(parent) {
@@ -162,7 +157,7 @@ function createFooter(parent) {
           <a href="#">Spotify Free</a>
         </div>
         <ul class="footer-list">
-        <a href="#"><li><img src="./assets/Svg/insta.svg" alt="" /></li></a>
+          <a href="#"><li><img src="./assets/Svg/insta.svg" alt="" /></li></a>
           <a href="#"><li><img src="./assets/Svg/twitter.svg" alt="" /></li></a>
           <a href="#"><li><img src="./assets/Svg/facebook.svg" alt="" /></li></a>
         </ul>
@@ -171,45 +166,60 @@ function createFooter(parent) {
     <div class="footer-line"></div>
     <div class="footer-links-two">
       <div>
-            <a href="#" class="switchable">Legal</a>
-            <a href="#" class="switchable">Safety & Privacy Center</a>
-            <a href="#" class="switchable">Privacy Policy</a>
-            <a href="#" class="switchable">Cookies</a>
-            <a href="#" class="switchable">About Ads</a>
-            <a href="#" class="switchable">Accessibility</a>
-            <a href="#">&#169; 2025 Spotify AB</a>
-          </div>
-          <button class="lang-btn switchable"">
-            <img src="./assets/Svg/web.svg" alt="" />
-            <span>English</span>
-          </button>
-        </div>
+        <a href="#" class="switchable">Legal</a>
+        <a href="#" class="switchable">Safety & Privacy Center</a>
+        <a href="#" class="switchable">Privacy Policy</a>
+        <a href="#" class="switchable">Cookies</a>
+        <a href="#" class="switchable">About Ads</a>
+        <a href="#" class="switchable">Accessibility</a>
+        <a href="#">&#169; 2025 Spotify AB</a>
+      </div>
+      <button class="lang-btn switchable">
+        <img src="./assets/Svg/web.svg" alt="" />
+        <span>English</span>
+      </button>
+    </div>
   `;
   parent.appendChild(footer);
 }
 
-function createCover(playlist) {
-  // console.log(playlist)
-  const covers = playlist.list.slice(0, 4);
-  let html = "";
-  covers.forEach(cover => {
-    html += `<img src="${cover.cover}" alt="${cover.name}" class="playlist-cover" loading="lazy">`;
-  });
-  return html;
+export function createCover(playlist) {
+  return playlist.list
+    .slice(0, 4)
+    .map(
+      cover =>
+        `<img src="${cover.cover}" alt="${cover.name}" class="playlist-cover" loading="lazy">`
+    )
+    .join("");
 }
 
 function getScreenCategory() {
   const width = window.innerWidth;
+  //const width = 1100
   const category = screenCategories.find(
     cat => width > cat.min && width <= cat.max
   );
+  //console.log(category)
   return category ? category.name : "unknown";
 }
-function handleResize(data, playlists) {
+function handleResize(data, playlists,container) {
   const currentCategory = getScreenCategory();
   if (currentCategory !== lastScreenCategory) {
-    renderSections(data, playlists);
+    document.querySelector(".main-right-js").innerHTML = "";
+    renderSections(data, playlists, container);
   }
+}
+function handleMainMargin(){
+  const navOne = document.querySelector('.navbar-one')
+  const navTwo = document.querySelector('.navbar-two')
+  let navHeight
+  if (navOne && window.innerWidth<636){
+    navHeight = navOne.offsetHeight
+  }
+  if(navTwo && window.innerWidth>636){
+    navHeight = navTwo.offsetHeight
+  }
+  document.querySelector('main').style.marginTop = navHeight+'px'
 }
 function filterItems(items) {
   const category = getScreenCategory();
@@ -226,4 +236,14 @@ function filterItems(items) {
     default:
       return items;
   }
+}
+
+//For popstate handling:
+export function navigate(view,page){
+  if(page === "home"){
+    history.replaceState({view:view,page:page},page)
+  }else{
+    history.pushState({view:view,page:page},page)
+  }
+  popUtils.setCurrentPage(page)
 }

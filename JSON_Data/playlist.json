@@ -1,13 +1,16 @@
 [
   {
     "title": "Demo Playlist 🤍",
+    "by": "Mohit Kumar",
+    "id": "1",
     "list": [
       {
         "id": "1",
         "name": "Sunflower - Spider-Man: Into the Spider-Verse",
         "cover": "assets/Images/songs_cover/Sunflower.jpeg",
-        "song": "../assets/Songs/Sunflower.mp3",
+        "song": "assets/Songs/Sunflower.mp3",
         "by": "Post Malone, Swae Lee",
+        "liked": "true",
         "bgcolor": "rgb(232, 0, 8)",
         "explicit": "false"
       },
@@ -17,6 +20,7 @@
         "cover": "assets/Images/songs_cover/Has-has.jpeg",
         "song": "../assets/Songs/Hass Hass - Diljit X Sia.mp3",
         "by": "Diljit Dosanjh, Sia, Greg Kurstin",
+        "liked": "true",
         "bgcolor": "rgb(201, 72, 115)",
         "explicit": "false"
       },
@@ -26,6 +30,7 @@
         "cover": "assets/Images/songs_cover/Chery-chery-lady.jpeg",
         "song": "../assets/Songs/Cheri-Cheri-Lady.mp3",
         "by": "Modern Talking",
+        "liked": "true",
         "bgcolor": "rgb(108, 123, 108)",
         "explicit": "false"
       },
@@ -35,6 +40,7 @@
         "cover": "assets/Images/songs_cover/Money.jpeg",
         "song": "../assets/Songs/Money_(Lisa).mp3",
         "by": "Lisa",
+        "liked": "true",
         "bgcolor": "rgb(119,119,119)",
         "explicit": "false"
       },
@@ -44,6 +50,7 @@
         "cover": "assets/Images/songs_cover/Intentions.jpeg",
         "song": "../assets/Songs/Justin Bieber - Intentions.mp3",
         "by": "Justin Bieber, Quavo",
+        "liked": "true",
         "bgcolor": "rgb(217, 60, 45)",
         "explicit": "false"
       },
@@ -53,16 +60,18 @@
         "cover": "assets/Images/songs_cover/Money-trees.jpeg",
         "song": "../assets/Songs/Money Trees.mp3",
         "by": "Kendrick Lamar, Jay Rock",
+        "liked": "true",
         "bgcolor": "rgb(118, 118, 122)",
         "explicit": "true"
       },
-      
+
       {
         "id": "7",
         "name": "Shivers",
         "cover": "assets/Images/songs_cover/Shivers.jpeg",
         "song": "../assets/Songs/Ed Sheeran - Shivers.mp3",
         "by": "Ed Sheeran",
+        "liked": "true",
         "bgcolor": "rgb(216, 8, 24)",
         "explicit": "false"
       },
@@ -72,6 +81,7 @@
         "cover": "assets/Images/songs_cover/Ransom.jpeg",
         "song": "../assets/Songs/Lil Tecca - Ransom.mp3",
         "by": "Lil Tecca",
+        "liked": "true",
         "bgcolor": "rgb(209, 72, 50)",
         "explicit": "true"
       },
@@ -81,6 +91,7 @@
         "cover": "assets/Images/songs_cover/Mauntain-dew.jpeg",
         "song": "../assets/Songs/Lana Del Rey - Diet Mountain Dew.mp3",
         "by": "Lana Del Rey",
+        "liked": "true",
         "bgcolor": "rgb(133, 117, 72)",
         "explicit": "false"
       },
@@ -90,6 +101,7 @@
         "cover": "assets/Images/songs_cover/infected.jpeg",
         "song": "../assets/Songs/Sickick - Infected.mp3",
         "by": "Sickick",
+        "liked": "true",
         "bgcolor": "rgb(119,119,119)",
         "explicit": "false"
       },
@@ -99,6 +111,24 @@
         "cover": "assets/Images/songs_cover/Levitating.jpeg",
         "song": "../assets/Songs/Levitating.mp3",
         "by": "Dua Lipa",
+        "liked": "false",
+        "bgcolor": "rgb(83, 124, 148)",
+        "explicit": "false"
+      }
+    ]
+  },
+  {
+    "title": "Demo Playlist 2 ❤️",
+    "by": "Mohit Kumar",
+    "id": "2",
+    "list": [
+      {
+        "id": "11",
+        "name": "Levitating",
+        "cover": "assets/Images/songs_cover/Levitating.jpeg",
+        "song": "../assets/Songs/Levitating.mp3",
+        "by": "Dua Lipa",
+        "liked": "false",
         "bgcolor": "rgb(83, 124, 148)",
         "explicit": "false"
       }

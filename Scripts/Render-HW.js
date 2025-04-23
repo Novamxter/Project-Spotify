@@ -7,11 +7,12 @@ window.addEventListener("resize", () => {
 
 const hw = document.querySelector(".hw");
 const hwbutton = document.querySelector(".render-hw-button");
-
-hwbutton.addEventListener("click", () => {
-  if (hw.style.display === "none" || hw.style.display === "") {
-    hw.style.display = "flex";
-  } else {
-    hw.style.display = "none";
-  }
-});
+if (hwbutton) {
+  hwbutton.addEventListener("click", () => {
+    if (hw.style.display === "none" || hw.style.display === "") {
+      hw.style.display = "flex";
+    } else {
+      hw.style.display = "none";
+    }
+  });
+}

@@ -54,6 +54,9 @@
   header .navbar-two .search-bar-container {
     height: 40px;
   }
+  .song-bar{
+    width: 92%;
+  }
 }
 @media screen and (min-width: 640px) {
   header .navbar-one {
@@ -72,6 +75,7 @@
     overflow-y: hidden;
     padding-right: 20px;
     padding-left: 10px;
+    position: relative;
   }
   .main-right-section:hover {
     overflow-y: auto;
@@ -100,6 +104,22 @@
   }
   .main-right-section .song-list-nav{
     top: 0;
+  }
+  .song-page-container-js{
+    top: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    left: var(--song-page-left);
+    right: var(--song-page-right);
+    width: var(--song-page-width);
+    height: var(--song-page-height);
+  }
+  .song-page-active{
+    top:var(--song-page-top) ;
+  }
+  .song-bar{
+    bottom: unset;
+    top: var(--songbar-top);
   }
 }
 @media screen and (min-width: 686px) {
@@ -230,6 +250,9 @@
   .main-right-section .song-section .song-items {
     justify-content: space-between;
   }
+  .main-right-section .song-section .home-playlist-items{
+    justify-content: flex-start;
+  }
   /*  .main-right-section .song-section .song-card{
    max-width: ;
  } */
@@ -250,6 +273,12 @@
     font-size: 15px;
     font-weight: 750;
   }
+  .song-bar{
+    width: 59%;
+    left: var(--songbar-left);
+    right: unset;
+    transform: translateX(0);
+  }
 }
 @media screen and (min-width: 1054px) {
   header .navbar-two .left-icons {
@@ -267,6 +296,9 @@
   }
   .search-card-container {
     gap: 25px;
+  }
+  .song-bar{
+    width: 60%;
   }
 }
 @media screen and (min-width: 1082px) {
@@ -293,10 +325,23 @@
   .search-card {
     height: 10vw;
   }
+  .song-bar{
+    width: 61%;
+  }
 }
 
 @media screen and (min-width: 1300px) {
   .right-footer .footer-links-one {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .song-bar{
+    width: 62%;
+  }
+}
+
+/*--------------*/
+@media (prefers-reduced-motion:reduce){
+  .bar-song-title{
+    animation-play-state: paused;
   }
 }

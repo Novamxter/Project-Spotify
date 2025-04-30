@@ -102,13 +102,13 @@ function createPlaylistSection(playlists, parent) {
 
 function createPlaylists(playlists) {
   const mainDiv = document.createElement("div");
-  mainDiv.className = "song-items";
+  mainDiv.className = "song-items home-playlist-items";
   playlists.forEach((playlist, index) => {
     const div = document.createElement("div");
     div.className = "song-card home-playlist";
     div.dataset.index = `${index + 1}`;
     div.innerHTML = `<div class="song-img">
-      <div class="playlist-song-cover">
+      <div class="playlist-song-cover single-song-cover">
       ${createCover(playlist)}
       </div>
       <div class="play-btn-hover">

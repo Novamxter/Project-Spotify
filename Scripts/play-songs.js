@@ -1,27 +1,61 @@
 import { globalUtils } from "./render-songs.js";
 import { navigate } from "./songCards.js";
-let audio = null;
+export let audioUtils = {
+  audio: null
+};
 let index = null;
 let currentIndex = null;
-//let currentPlaylist = null;
+let isPlaying = false;
 let allSongs = null;
 let currentTitle = null;
 let songPageRendered = false;
+let currentPlaylist = null;
 let globalCurrentSong = null;
 let listenerAdded = false;
-export function getSong(songContainer, songs, title) {
+let currentPlaylistId;
+let playingFromId;
+export function getSong(songContainer, songs, title, id = 0) {
+  let visited = false;
   allSongs = songs;
   currentTitle = title;
+  currentPlaylistId = id;
+  let playBtn = document.querySelector(`.js-playlist-btn-${id}`);
+  if (playBtn) {
+    if (!isPlaying || playingFromId !== id) {
+      playBtn.classList.add("song-bar-play-toggle");
+    }
+    globalUtils.globalPlaylists.forEach(list => {
+      if (list.id === id) {
+        currentPlaylist = list;
+      }
+    });
+
+    playBtn.addEventListener("click", () => {
+      if (!audioUtils.audio) {
+        play(currentPlaylist.list[0]);
+      }
+      if (!visited) {
+        play(currentPlaylist.list[0]);
+        visited = true;
+      }
+      togglePlay(playBtn, audioUtils.audio, id);
+    });
+  }
+  adjustSongPagePosition();
+  window.addEventListener("resize", adjustSongPagePosition);
   songContainer.addEventListener("click", event => {
     let songHtml = event.target.closest(".song");
+
     if (songHtml && songContainer.contains(songHtml)) {
       index = songHtml.dataset.index;
       currentIndex = Number(index - 1);
-      //console.log(currentIndex);
       let song;
-      songs.forEach((song,i) => {
+      songs.forEach((song, i) => {
         if (i === currentIndex) {
           play(song);
+          document
+            .querySelector(`.js-playlist-btn-${id}`)
+            .classList.remove("song-bar-play-toggle");
         }
       });
       autoPlayNext(songs);
@@ -32,26 +66,35 @@ export function getSong(songContainer, songs, title) {
 function play(songData) {
   globalCurrentSong = songData;
   listenerAdded = false;
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
+  playingFromId = currentPlaylistId;
+  if (audioUtils.audio) {
+    audioUtils.audio.pause();
+    audioUtils.audio.currentTime = 0;
   }
-  
-  audio = new Audio(songData.song);
-  audio.addEventListener("canplaythrough", () => {
-    audio.play().catch(err => console.log("Autoplay blocked:", err));
-    audio.volume = 1
+  audioUtils.audio = new Audio(songData.song);
+  audioUtils.audio.addEventListener("canplaythrough", () => {
+    audioUtils.audio
+      .play()
+      .then(() => {
+        isPlaying = true;
+      })
+      .catch(err => {
+        console.log("Autoplay blocked:", err);
+        handlePlayError();
+      });
+    //audio.volume = 0
   });
   //audio.play();
-  console.log(songData)
   renderPlayBar(songData);
   if (songPageRendered) {
     document.querySelector(".song-page-container-js").innerHTML =
       renderSongPage(songData, currentTitle);
     songPageRendered = true;
+    handleLikes()
   }
-  audio.addEventListener("timeupdate", () => {
-    const percent = (audio.currentTime / audio.duration) * 100;
+  audioUtils.audio.addEventListener("timeupdate", () => {
+    const percent =
+      (audioUtils.audio.currentTime / audioUtils.audio.duration) * 100;
     document.documentElement.style.setProperty(
       "--song-progress-percent",
       `${percent}%`
@@ -59,8 +102,8 @@ function play(songData) {
     const curr = document.querySelector(".current-time");
     const dura = document.querySelector(".duration");
     if (curr && dura) {
-      curr.innerHTML = formatTime(audio.currentTime) || "0:00";
-      dura.innerHTML = formatTime(audio.duration) || "0:00";
+      curr.innerHTML = formatTime(audioUtils.audio.currentTime) || "0:00";
+      dura.innerHTML = formatTime(audioUtils.audio.duration) || "0:00";
     }
   });
 }
@@ -74,22 +117,23 @@ function playNext(direction, song, songs) {
     }
   });
   if (direction === "previous" && prevSongIndex >= 0) {
-    currentIndex--
+    currentIndex--;
     play(songs[prevSongIndex]);
   } else if (direction === "next" && nextSongIndex < songs.length) {
-    currentIndex++
+    currentIndex++;
     play(songs[nextSongIndex]);
   }
-  autoPlayNext(songs)
+  autoPlayNext(songs);
 }
 function autoPlayNext(songs) {
-  audio.onended = () => {
-    if(currentIndex < songs.length){
-      currentIndex ++
+  //console.log(songs.name)
+  audioUtils.audio.onended = () => {
+    if (currentIndex < songs.length) {
+      currentIndex++;
       play(songs[currentIndex]);
-      autoPlayNext(songs)
-    }else {
-      console.log("Playlist Ended")
+      autoPlayNext(songs);
+    } else {
+      console.log("Playlist Ended");
     }
   };
 }
@@ -98,7 +142,9 @@ function renderPlayBar(songData) {
   parent.innerHTML = `<div class="song-bar">
       <img src="${songData.cover}" alt="" class="song-bar-img">
     <div class="song-bar-info">
-      <p>${songData.name}</p>
+      <div class="song-bar-marquee">
+        <p class="bar-song-title">${songData.name}</p>
+      </div>
       <span>${songData.by}</span>
     </div>
     <div class="song-bar-icons">
@@ -115,17 +161,50 @@ function renderPlayBar(songData) {
   );
   //songBarRendered = true
   managePlayBar();
+  setSongbarTop();
+  adjustMarquee();
   let barBtn = document.querySelector(".song-bar-play");
 
   barBtn.addEventListener("click", () => {
     togglePlay(barBtn);
   });
+  window.addEventListener("resize", () => {
+    setSongbarTop();
+    adjustSongPagePosition();
+    adjustMarquee();
+  });
 }
 
+function setSongbarTop() {
+  const navbar = document.querySelector(".navbar-two");
+  const rightSection = document.querySelector(".main-right-section");
+  const songbar = document.querySelector(".song-bar");
+
+  if (songbar) {
+    const navbarHeight = navbar.offsetHeight;
+    const rightSectionRect = rightSection.getBoundingClientRect();
+    const rightSectionWidth = rightSection.offsetWidth;
+    const songbarWidth = songbar.offsetWidth;
+    const topValue = navbarHeight + rightSection.offsetHeight;
+
+    if (window.innerWidth > 640 && window.innerWidth < 858) {
+      songbar.style.setProperty("--songbar-top", `${topValue - 40}px`);
+    } else if (window.innerWidth > 858) {
+      songbar.style.setProperty("--songbar-top", `${topValue - 50}px`);
+
+      // Calculate center relative to viewport
+      const leftOffset =
+        rightSectionRect.left + (rightSectionWidth - songbarWidth) / 2;
+      songbar.style.setProperty("--songbar-left", `${leftOffset}px`);
+    }
+  }
+}
 export function managePlayBar() {
   let songPage = document.querySelector(".song-page-container-js");
   let icons = document.querySelector(".song-bar-icons");
   songPage.innerHTML = renderSongPage(globalCurrentSong, currentTitle);
+  handleLikes()
+  
   const bar = document.querySelector(".song-bar");
 
   let pageBtn = document.querySelector(".song-page-play-btn");
@@ -155,23 +234,29 @@ export function managePlayBar() {
     });
     listenerAdded = true;
     handleSeekbar();
+    // adjustMarquee()
+    // window.addEventListener("load",adjustMarquee)
+    // window.addEventListener("resize",adjustMarquee)
   }
 }
 
-function togglePlay(clickedBtn) {
+export function togglePlay(clickedBtn, audio = audioUtils.audio, id = 0) {
   let isPaused = clickedBtn.classList.contains("song-bar-play-toggle");
-
   if (isPaused) {
     clickedBtn.classList.remove("song-bar-play-toggle");
     audio.play();
+    isPlaying = true;
   } else {
     clickedBtn.classList.add("song-bar-play-toggle");
     audio.pause();
+    isPlaying = false;
   }
-
+  syncAllSongs(clickedBtn, isPaused, currentPlaylistId);
+}
+function syncAllSongs(clickedBtn, isPaused, id) {
   // Sync other play buttons
   let allPlayBtns = document.querySelectorAll(
-    ".song-bar-play, .song-page-play-btn"
+    `.song-bar-play, .song-page-play-btn, .js-playlist-btn-${id}`
   );
   allPlayBtns.forEach(btn => {
     if (btn !== clickedBtn) {
@@ -183,7 +268,6 @@ function togglePlay(clickedBtn) {
     }
   });
 }
-
 function toggleSongPage() {
   const page = document.querySelector(".song-page-container-js");
   if (page.classList.contains("song-page-active")) {
@@ -214,47 +298,47 @@ function handleSeekbar() {
   const seekTime = document.querySelector(".current-time");
   let isDragging = false;
 
-  if(seekbarBg){
-  // Mouse events
-  seekbarBg.addEventListener("mousedown", e => {
-    isDragging = true;
-    updateSeekTime(e.clientX,seekbarBg,seekTime);
-  });
+  if (seekbarBg) {
+    // Mouse events
+    seekbarBg.addEventListener("mousedown", e => {
+      isDragging = true;
+      updateSeekTime(e.clientX, seekbarBg, seekTime);
+    });
 
-  window.addEventListener("mousemove", e => {
-    if (isDragging) updateSeekTime(e.clientX,seekbarBg,seekTime);
-  });
+    window.addEventListener("mousemove", e => {
+      if (isDragging) updateSeekTime(e.clientX, seekbarBg, seekTime);
+    });
 
-  window.addEventListener("mouseup", () => {
-    isDragging = false;
-  });
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
 
-  // Touch events
-  seekbarBg.addEventListener("touchstart", e => {
-    isDragging = true;
-    updateSeekTime(e.touches[0].clientX,seekbarBg,seekTime);
-  });
-  window.addEventListener("touchmove", e => {
-    if (isDragging) updateSeekTime(e.touches[0].clientX,seekbarBg,seekTime);
-  });
-  window.addEventListener("touchend", () => {
-    isDragging = false;
-  });
+    // Touch events
+    seekbarBg.addEventListener("touchstart", e => {
+      isDragging = true;
+      updateSeekTime(e.touches[0].clientX, seekbarBg, seekTime);
+    });
+    window.addEventListener("touchmove", e => {
+      if (isDragging) updateSeekTime(e.touches[0].clientX, seekbarBg, seekTime);
+    });
+    window.addEventListener("touchend", () => {
+      isDragging = false;
+    });
   }
 }
 
-function updateSeekTime(clientX,seekC,timeC) {
+function updateSeekTime(clientX, seekC, timeC) {
   const rect = seekC.getBoundingClientRect();
   let offsetX = clientX - rect.left;
   offsetX = Math.max(0, Math.min(offsetX, rect.width));
   const percent = offsetX / rect.width;
-  const currentSeconds = Math.round(percent * audio.duration);
-  
+  const currentSeconds = Math.round(percent * audioUtils.audio.duration);
+
   document.documentElement.style.setProperty(
     "--song-progress-percent",
     `${percent * 100}%`
   );
-  audio.currentTime = currentSeconds
+  audioUtils.audio.currentTime = currentSeconds;
   return currentSeconds;
 }
 function renderSongPage(data, title) {
@@ -280,6 +364,10 @@ function renderSongPage(data, title) {
           <p>${data.name}</p>
           <span>${data.by}</span>
         </div>
+        <button class="like-btn">
+          <ion-icon name="heart${data.liked === "true"?"":"-outline"}" class="like-icon ${data.liked === "true"?"like-active":""}"></ion-icon>
+          
+        </button>
       </div>
       <div class="song-page-seekbar-container">
         <div class="song-page-seekbar">
@@ -317,4 +405,85 @@ function renderSongPage(data, title) {
       </div>
     </div>
   </div>`;
+}
+
+function handleLikes(){
+  let btn = document.querySelector(".like-btn")
+  let icon = document.querySelector(".like-icon")
+  let timeOut
+  if(btn){
+    btn.addEventListener("click",()=>{
+      if(icon.classList.contains("like-active")){
+        icon.classList.remove("like-active")
+        icon.setAttribute("name","heart-outline")
+      }else{
+        if(timeOut) clearTimeout(timeOut)
+        icon.classList.add("like-active")
+        icon.classList.add("like-size")
+        icon.setAttribute("name","heart")
+        timeOut = setTimeout(()=>{
+          icon.classList.remove("like-size")
+        },200)
+      }
+    })
+  }
+}
+
+function adjustSongPagePosition() {
+  const songPage = document.querySelector(".song-page-container-js");
+  const rightSection = document.querySelector(".main-right-section");
+
+  if (window.innerWidth >= 640 && songPage) {
+    const rect = rightSection.getBoundingClientRect();
+    songPage.style.setProperty("--song-page-top", `${rect.top}px`);
+    songPage.style.setProperty("--song-page-left", `${rect.left}px`);
+    songPage.style.setProperty("--song-page-right", `${rect.right}px`);
+    songPage.style.setProperty("--song-page-width", `${rect.width}px`);
+    console.log(rect.width);
+    songPage.style.setProperty("--song-page-height", `${rect.height + 3}px`);
+  }
+}
+
+function adjustMarquee() {
+  
+  const marquee = document.querySelector(".song-bar-marquee");
+  let songText = document.querySelector(".bar-song-title");
+  const container = document.querySelector(".song-bar-info");
+  const existingClone = marquee.querySelector(".song-title.clone");
+  if (existingClone) existingClone.remove();
+  songText.classList.remove("marquee-active")
+
+  void marquee.offsetWidth;
+
+  const scrollNeeded = songText.scrollWidth > container.offsetWidth;
+
+  if (scrollNeeded) {
+    const clone = songText.cloneNode(true);
+    clone.classList.add("clone");
+    clone.setAttribute("aria-hidden","true")
+    marquee.appendChild(clone);
+    songText = document.querySelectorAll(".bar-song-title")
+    songText.forEach((text)=>{
+      text.classList.add("marquee-active")
+    })
+  }
+  //handling 1s Pause 
+  const groups = document.querySelectorAll('.bar-song-title');
+
+  groups.forEach(group => {
+    group.style.animationPlayState = 'running';
+
+    group.addEventListener('animationiteration', () => {
+      group.style.animationPlayState = 'paused';
+      setTimeout(() => {
+        group.style.animationPlayState = 'running';
+      }, 1000); // 1 second delay
+    });
+  });
+}
+
+function handlePlayError() {
+  let btn = document.querySelector(".song-bar-play");
+  btn.click();
+  btn.click();
 }

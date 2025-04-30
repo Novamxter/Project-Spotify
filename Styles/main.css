@@ -65,7 +65,7 @@ header .navbar-one .search-icon-container {
   /* background-color: rgb(217, 60, 45) ; */
   height: 38px;
   width: 38px;
-  margin: 3px;
+  /* margin: 3px; */
   border-radius: 35px;
   justify-content: center;
   position: relative;
@@ -103,7 +103,7 @@ header .navbar-one .mob-lib-icon-btn{
   border: none;
   border-radius: 50%;
   height: 38px;
-  margin: 3px;
+  /* margin: 3px; */
   min-width: 38px;
   display: flex;
   justify-content: center;
@@ -610,6 +610,11 @@ main{
 .main-left-section .lib-body-top{
   overflow: auto;
   position: relative;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.main-left-section .lib-body-top::-webkit-scrollbar{
+  display: none;
 }
 .main-left-section .lib-nav{
   display: flex;
@@ -790,6 +795,7 @@ main{
   height: 46px;
   width: 46px;
   border-radius: 50%;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1057,6 +1063,9 @@ footer .footer-line{
 }
 .song .song-content{
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 .song .song-content p{
   font-size: 15px;
@@ -1065,8 +1074,22 @@ footer .footer-line{
   text-overflow: ellipsis;
 }
 .song .song-content span{
+  display: flex;
+  gap: 5px;
   font-size: 12px;
   color: rgba(255,255,255,.5);
+}
+.song .song-content .explicit-wrap{
+  height: 13px;
+  width: 13px;
+  border-radius: 2px;
+  background-color: rgba(255,255,255,.7);
+  color: black;
+  font-weight: 700;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*-----------home-song-page----------*/
 .main-right-section .home-songs-wrapper{
@@ -1287,7 +1310,7 @@ footer .footer-line{
   display: flex;
   column-gap: 12px;
   align-items: center;
-  padding: 9px;
+  padding: 9px 25px 9px 9px;
   z-index: 50;
 }
 .song-bar::before{
@@ -1305,18 +1328,42 @@ footer .footer-line{
   border-radius: 5px;
 }
 .song-bar .song-bar-info{
-  width: 65%;
+  max-width: 65%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
 }
-.song-bar p{
+.song-bar-marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap:40px;
+}
+.song-bar .bar-song-title{
+  display: flex;
+  flex-shrink: 0;
   font-size: 15px;
   font-weight: 600;
 }
+.marquee-active{
+  animation: marquee 5s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-100% - 40px));
+  }
+}
+
 .song-bar span{
   font-size: 13px;
   color: rgba(255,255,255,0.7);
 }
 .song-bar .song-bar-icons{
   display: flex;
+  margin-left: auto;
 }
 .song-bar .song-bar-play img{
   height: 30px;
@@ -1359,22 +1406,22 @@ footer .footer-line{
   height: 100%;
   z-index: 50;
   background-color: red;
-  transition: top 1s ease-in-out;
+  transition: top 0.6s ease-in-out;
 }
 .song-page-active{
   top: 0;
 }
 .song-page{
   height: 100%;
+  width: 100%;
   padding: 15px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--song-accent-color);
   background-image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.7) 80%);
-  
   box-sizing: border-box;
-  
 }
 .song-page .song-page-top{
   display: flex;
@@ -1403,8 +1450,11 @@ footer .footer-line{
   transform: rotate(90deg);
 }
 .song-page .song-page-main-imgwrap{
-  height: 310px;
-  width: 310px;
+  height: clamp(150px,82vw,450px);
+  /* width: clamp(150px,82vw,450px); */
+  aspect-ratio: 1/1;
+  /* height: 310px;
+  width: 310px; */
   border-radius: 15px;
   overflow: hidden;
   margin-top: 50px;
@@ -1425,10 +1475,33 @@ footer .footer-line{
 .song-page .song-page-titles{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .song-page .song-page-titles p{
   font-size: 20px;
   font-weight: 600;
+}
+.song-page .like-btn{
+  height: 53px;
+  width: 53px;
+  min-width: 53px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.song-page .like-btn .like-icon{
+  font-size: 30px;
+  color: #d8d8d8;
+  transition: transform 0.2s ease-in-out;
+}
+.song-page .like-btn .like-icon.like-active{
+  color: rgb(30, 215, 96);
+}
+.song-page .like-btn .like-icon.like-size{
+  transform: scale(1.2);
 }
 .song-page .song-page-titles span{
   font-size: 16px;
@@ -1437,6 +1510,8 @@ footer .footer-line{
 .song-page .song-page-info{
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  /* width: 85%; */
 }
 .song-page .song-page-seekbar-container{
   margin-top: 20px;

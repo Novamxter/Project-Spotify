@@ -1,12 +1,13 @@
 import { createCover, addSongs, popUtils, navigate } from "./songCards.js";
 import { toggleLibrary } from "./handleHams.js";
-import {getSong} from './play-songs.js'
+import {getSong,togglePlay,audioUtils} from './play-songs.js'
 export let globalUtils = {
   globalData: null,
   globalPlaylists: null,
   globalLikedSongs: null,
   globalLocalSongs: null,
-  globalAddSongs: null
+  globalAddSongs: null,
+  lastPlaylistId: null
 };
 let havePlaylist = false;
 
@@ -75,6 +76,7 @@ async function createLibrarySongs(
         let index = playlist.dataset.index;
         let playableSongs ;
         let playlistTitle = null;
+        let id ;
         if (index === "1") {
           playlistTitle = "Liked Songs"
           playableSongs = globalUtils.globalLikedSongs
@@ -84,6 +86,7 @@ async function createLibrarySongs(
         } else {
           playlists.forEach(list => {
             if (list.id === `${Number(index) - 2}`) {
+              id = list.id
               playableSongs = list.list
               playlistTitle = list.title
             }
@@ -93,7 +96,7 @@ async function createLibrarySongs(
         if(history.state.page !== "librarySongs"){
             navigate("library", "librarySongs");
           }
-        getSong(container,playableSongs,playlistTitle)
+        getSong(container,playableSongs,playlistTitle,id)
         document.querySelector('.main-songs-container').dataset.pActive = "librarySongs";
         document
           .querySelector(".lib-song-back-js")
@@ -225,6 +228,7 @@ async function createHomeSongs(playlists, status, addSongs, songCards) {
             coverPlaylist = list;
           }
         });
+        globalUtils.lastPlaylistId = index
         container.innerHTML = `<div class="home-songs-wrapper">
           <button class="song-list-back-btn song-list-back-js">
             <img src="assets/Svg/backArrow.svg" alt="" />
@@ -268,9 +272,10 @@ async function createHomeSongs(playlists, status, addSongs, songCards) {
               </div>
               <div class="song-list-right">
                 <img src="./assets/Svg/smart-shuffle.svg" class="song-list-shuffle-pic" style="--shuffle-color:rgb(30, 215, 96)">
-                <div class="play-btn-hover song-play-btn">
-                  <img src="./assets/Svg/play.svg">
-                </div>
+                <button class="play-btn-hover song-play-btn playlist-whole-play-btn js-playlist-btn-${index}" data-index="${index}">
+                  <img src="./assets/Svg/play.svg" class="play">
+                  <img src="./assets/Svg/pause.svg" alt="" class="pause">
+                </button>
               </div>
             </div>
           </div>
@@ -280,7 +285,8 @@ async function createHomeSongs(playlists, status, addSongs, songCards) {
         </div>
         </div>`;
         let songContainer = document.querySelector(".song-list-wrapper");
-        getSong(songContainer,songs,coverPlaylist.title)
+        
+        getSong(songContainer,songs,coverPlaylist.title,index)
         const nav = document.querySelector(".navbar-one");
         const img = document.querySelector(".song-list-img");
         const back = document.querySelectorAll(".song-list-back-js");
@@ -298,6 +304,7 @@ async function createHomeSongs(playlists, status, addSongs, songCards) {
           handleImageSize();
           //ScrollTrigger.refresh();
         }
+        
         back.forEach(btn => {
           if (btn) {
             btn.addEventListener("click", () => {
@@ -306,6 +313,9 @@ async function createHomeSongs(playlists, status, addSongs, songCards) {
             });
           }
         });
+        // console.log(audio)
+        // 
+        
         window.scrollTo({ top: 0 });
         document.querySelector(".main-right-section ").scrollTo({ top: 0 });
         handleSongNav();
@@ -323,14 +333,17 @@ function createSongList(songs) {
   const div = document.createElement("div");
   div.className = "song-list-wrapper";
   let html = "";
-  songs.map(song => {
-    html += `<div class="song" data-index="${song.id}">
+  songs.map((song,i) => {
+    html += `<div class="song" data-index="${i+1}">
       <div class="song-img-wrapper">
         <img src="${song.cover}" alt="" loading="lazy" class="song-img">
       </div>
       <div class="song-content">
         <p>${song.name}</p>
-        <span>${song.by}</span>
+        <span>
+          ${song.explicit === "true"?'<div class="explicit-wrap">E</div>':""}
+          ${song.by}
+        </span>
       </div>
     </div>`;
   });

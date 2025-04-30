@@ -123,14 +123,104 @@
     "id": "2",
     "list": [
       {
-        "id": "11",
-        "name": "Levitating",
-        "cover": "assets/Images/songs_cover/Levitating.jpeg",
-        "song": "../assets/Songs/Levitating.mp3",
-        "by": "Dua Lipa",
-        "liked": "false",
-        "bgcolor": "rgb(83, 124, 148)",
-        "explicit": "false"
+        "id":"12",
+        "name":"Day 'N' Nite",
+        "cover":"assets/Images/songs_cover/Moonknight.jpg",
+        "song":"assets/Songs/MOONKNIGHT  Day n night (snippet).mp3",
+        "by":"Kid Cudi",
+        "liked":"true",
+        "bgcolor":"rgb(184, 92, 61)",
+        "explicit":"false"
+      },{
+        "id":"13",
+        "name":"FLOWER",
+        "cover":"../assets/Images/songs_cover/Flower.jpeg",
+        "song":"../assets/Songs/Flower (snippet).mp3",
+        "by":"JISOO",
+        "liked":"true",
+        "bgcolor":"rgb(152, 8, 16)",
+        "explicit":"false"
+      },{
+        "id":"14",
+        "name":"Heat Waves - Slowed",
+        "cover":"../assets/Images/songs_cover/Heat Waves.jpeg",
+        "song":"../assets/Songs/HEAT WAVES (snippet).mp3",
+        "by":"Glass Animals",
+        "liked":"true",
+        "bgcolor":"rgb(186, 60, 209)",
+        "explicit":"false"
+      },{
+        "id":"15",
+        "name":"Play Date",
+        "cover":"../assets/Images/songs_cover/Play-date.jpeg",
+        "song":"../assets/Songs/Play date (snippet).mp3",
+        "by":"Melanie Martinez",
+        "liked":"true",
+        "bgcolor":"rgb(42, 125, 180)",
+        "explicit":"true"
+      },{
+        "id":"16",
+        "name":"Anxiety",
+        "cover":"../assets/Images/songs_cover/Anxiety.jpeg",
+        "song":"../assets/Songs/Doechii - Anxiety (snippet).mp3",
+        "by":"Doechii",
+        "liked":"true",
+        "bgcolor":"rgb(32, 40, 56)",
+        "explicit":"false"
+      },{
+        "id":"17",
+        "name":"A Man Without Love",
+        "cover":"../assets/Images/songs_cover/A-man.jpeg",
+        "song":"../assets/Songs/Moon knight a man without love (snippet).mp3",
+        "by":"Engelbert Humperdinck",
+        "liked":"false",
+        "bgcolor":"rgb(157, 105, 99)",
+        "explicit":"false"
+      },{
+        "id":"18",
+        "name":"Good For You",
+        "cover":"../assets/Images/songs_cover/Good-for-you.jpg",
+        "song":"../assets/Songs/Good For You - Selena Gomez (snippet).mp3",
+        "by":"Selena Gomez",
+        "liked":"true",
+        "bgcolor":"rgb(83, 83, 83)",
+        "explicit":"false"
+      },{
+        "id":"19",
+        "name":"Rasputin",
+        "cover":"../assets/Images/songs_cover/Rasputin.jpg",
+        "song":"../assets/Songs/Rasputin (snippet) .mp3",
+        "by":"Boney M.",
+        "liked":"false",
+        "bgcolor":"rgb(168, 88, 72)",
+        "explicit":"false"
+      },{
+        "id":"20",
+        "name":"Harleys In Hawaii",
+        "cover":"../assets/Images/songs_cover/Harley.jpeg",
+        "song":"../assets/Songs/Harleys in Hawaii (snippet).mp3",
+        "by":"Katy Perry",
+        "liked":"true",
+        "bgcolor":"rgb(197,14,14)",
+        "explicit":"false"
+      },{
+        "id":"21",
+        "name":"Safari",
+        "cover":"../assets/Images/songs_cover/Safari.jpeg",
+        "song":"../assets/Songs/Serena - (Safari) (snippet).mp3",
+        "by":"Serena",
+        "liked":"false",
+        "bgcolor":"rgb(39, 124, 183)",
+        "explicit":"false"
+      },{
+        "id":"22",
+        "name":"MATUSHKA ULTRAFUNK",
+        "cover":"../assets/Images/songs_cover/Matushka.jpeg",
+        "song":"../assets/Songs/Matushka (Ultra Funk)  (snippet).mp3",
+        "by":"satirin",
+        "liked":"true",
+        "bgcolor":"rgb(136, 8, 192)",
+        "explicit":"false"
       }
     ]
   }

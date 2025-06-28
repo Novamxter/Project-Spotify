@@ -1564,9 +1564,13 @@ footer .footer-line{
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  border: none;
+  position: relative;
 }
 .song-page .song-page-shuffle-img{
-  filter: var(--shuffle-active-color);
+  /* filter: var(--shuffle-active-color); */
+  filter: invert(1);
   height: 25px;
 }
 .song-page .play-section{
@@ -1602,6 +1606,22 @@ footer .footer-line{
 .song-page .song-page-series-img{
   height: 25px;
   filter: invert(1);
+}
+.song-page .active-dot{
+  display: none;
+  position: absolute;
+  bottom: 1px;
+  left: 17px;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: rgb(30, 215, 96);
+}
+.song-page .play-order-active img{
+  filter: var(--shuffle-active-color);
+}
+.song-page .play-order-active .active-dot{
+  display: block;
 }
 .song-page .song-page-footer-line{
   display: flex;
